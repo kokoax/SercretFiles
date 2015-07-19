@@ -2,5 +2,5 @@
 
 git add *
 git commit -m ".vimrc"
-git push kokoax yomo4808
+git push
 
