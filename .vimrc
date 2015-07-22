@@ -49,6 +49,10 @@ imap <C-l> <ESC>
 set nocompatible
 filetype off
 
+autocmd BufNewFile *.c 0r $HOME/.vim/template/C.txt
+autocmd BufNewFile *.cpp 0r $HOME/.vim/template/CPP.txt
+autocmd BufNewFile *.java 0r $HOME/.vim/template/java.txt
+
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#begin(expand('~/.vim/bundle/'))
@@ -113,10 +117,6 @@ filetype indent on
 set t_Co=256
 
 syntax on
-
 colorscheme molokai
 highlight Normal ctermbg=none
-
-"colorscheme jellybeans
-
 
