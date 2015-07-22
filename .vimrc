@@ -49,10 +49,6 @@ imap <C-l> <ESC>
 set nocompatible
 filetype off
 
-autocmd BufNewFile *.c 0r $HOME/.vim/template/C.txt
-autocmd BufNewFile *.cpp 0r $HOME/.vim/template/CPP.txt
-autocmd BufNewFile *.java 0r $HOME/.vim/template/java.txt
-
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#begin(expand('~/.vim/bundle/'))
@@ -81,6 +77,23 @@ NeoBundle 'Shougo/neomru.vim'
 
 "htmlのオートインデントを行うプラグイン
 let g:html_indent_inctags = "html,body,head,tbody"
+
+NeoBundle 'thinca/vim-template'
+
+"<+FILE_NAME+>にファイル名を挿入する。
+"<+DATE+>に日付を挿入する。
+autocmd User plugin-template-loaded call s:template_keywords()
+function! s:template_keywords()
+	silent! %s/<+FILE_NAME+>/\=expand('%:r')/g
+	silent! %s/<+FULL_NAME+>/\=expand('%:t')/g
+	silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
+endfunction
+
+"<+CURSOR+>にカーソルを移動する。
+autocmd User plugin-template-loaded
+	\		if search('<+CURSOR+>')
+	\	|		silent! execute 'normal! "_da>'
+	\	|	endif
 
 "color scheme Vimの色分けとか背景色とかのやつ
 NeoBundle 'tomasr/molokai'

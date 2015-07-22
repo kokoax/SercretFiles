@@ -9,6 +9,7 @@ unite.vim
 vim-hybrid
 vim-indent-guides
 vim-slime
+vim-template
 vim-trailing-whitespace
 vimproc
 vimshell
