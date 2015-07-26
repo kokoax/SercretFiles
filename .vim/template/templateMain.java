@@ -2,6 +2,8 @@
 //<+DATE+>
 
 public class <+FILE_NAME+>{
-	<+CURSOR+>
+	public static void main( String[] args ){
+		<+CURSOR+>
+	}
 }
 
