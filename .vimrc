@@ -15,6 +15,11 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+augroup AutoHTML
+	autocmd!
+	autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+	autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+augroup END
 
 nnoremap s <Nop>
 
@@ -62,6 +67,10 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 
+"ファイルをtree的に表示してくれる
+NeoBundle 'scrooloose/nerdtree'
+nnoremap T :NERDTree<CR>
+
 "インデントの深さを可視化
 NeoBundle 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
@@ -78,6 +87,7 @@ NeoBundle 'Shougo/neomru.vim'
 "htmlのオートインデントを行うプラグイン
 let g:html_indent_inctags = "html,body,head,tbody"
 
+"特定のファイルを開いた時にテンプレートを差し込む
 NeoBundle 'thinca/vim-template'
 
 "<+FILE_NAME+>にファイル名を挿入する。

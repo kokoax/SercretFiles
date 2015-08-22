@@ -4,6 +4,7 @@ molokai
 neobundle.vim
 neomru.vim
 neosnippet
+nerdtree
 syntastic
 unite.vim
 vim-hybrid
