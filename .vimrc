@@ -48,6 +48,8 @@ nnoremap s- <C-w>-
 nnoremap s= <C-w>=
 
 nnoremap st :tabnew<CR>
+nnoremap sn gt
+nnoremap sp gT
 
 imap <C-l> <ESC>
 
@@ -140,6 +142,6 @@ filetype indent on
 set t_Co=256
 
 syntax on
-colorscheme molokai
+colorscheme hybrid
 highlight Normal ctermbg=none
 
