@@ -33,6 +33,10 @@ set -0
 setopt auto_cd		#cdを入力しなくてもディレクトリを移動できる
 setopt auto_pushd	#移動したディレクトリを記録する
 
+#先方予測機能
+autoload predict-on
+predict-on
+
 ##ターミナルの表示設定
 case ${UID} in
 	0)
