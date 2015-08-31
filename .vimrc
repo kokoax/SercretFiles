@@ -3,6 +3,8 @@ set number
 set smartindent
 "set expandtab
 set autoindent
+"HTML特有のインデントを切る.
+autocmd FileType html :setlocal indentexpr=""
 
 set display=lastline
 
@@ -61,13 +63,22 @@ if has('vim_starting')
   call neobundle#begin(expand('~/.vim/bundle/'))
 endif
 
+"NeoBundleでNeoBundle自身をプラグインとして管理している
 NeoBundle 'Shougo/neobundle.vim'
+
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
+
+"MarkDownプラグイン
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+"let g:previm_open_cmd = 'open -a Firefox'
 
 "ファイルをtree的に表示してくれる
 NeoBundle 'scrooloose/nerdtree'
@@ -142,6 +153,7 @@ filetype indent on
 set t_Co=256
 
 syntax on
+"colorscheme hybrid
 colorscheme hybrid
 highlight Normal ctermbg=none
 

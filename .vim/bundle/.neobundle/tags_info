@@ -5,10 +5,13 @@ neobundle.vim
 neomru.vim
 neosnippet
 nerdtree
+open-browser.vim
+previm
 syntastic
 unite.vim
 vim-hybrid
 vim-indent-guides
+vim-markdown
 vim-slime
 vim-template
 vim-trailing-whitespace
