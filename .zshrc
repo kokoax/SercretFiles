@@ -42,6 +42,6 @@ setopt auto_pushd	#移動したディレクトリを記録する
 autoload predict-on
 predict-on
 
-[ -f ~/.zshrc.other] && source ~/.zshrc.other
+[ -f ~/.zshrc.other ] && source ~/.zshrc.other
 [ -f ~/.zshrc.color ] && source ~/.zshrc.color
 
