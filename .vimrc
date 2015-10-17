@@ -1,6 +1,8 @@
 set encoding=utf-8
 set number
 
+set textwidth=0
+
 set smartindent
 "set expandtab
 set autoindent
@@ -22,6 +24,9 @@ augroup AutoHTML
 	autocmd!
 	autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
 	autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+	autocmd FileType html imap <buffer><expr><tab>
+		\ emmet#isExpandable() ? "\<plug>(emmet-expand-abbr)" :
+		\ "\<tab>"
 augroup END
 
 nnoremap s <Nop>
@@ -70,7 +75,7 @@ NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/neosnippet'
+"NeoBundle 'Shougo/neosnippet'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 
@@ -97,6 +102,9 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 "NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+
+NeoBundle 'mattn/emmet-vim'
+let g:user_emmet_leader_key = '<C-y>'
 
 "htmlのオートインデントを行うプラグイン
 let g:html_indent_inctags = "html,body,head,tbody"
@@ -154,7 +162,7 @@ filetype indent on
 set t_Co=256
 
 syntax on
-"colorscheme hybrid
-colorscheme molokai
+colorscheme hybrid
+"colorscheme molokai
 highlight Normal ctermbg=none
 

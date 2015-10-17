@@ -2,5 +2,5 @@
 bindkey -M viins '^L' vi-cmd-mode
 
 #alias
-alias ls="ls --color=auto"
+#alias ls="ls --G=auto"
 
