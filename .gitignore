@@ -1,2 +1,5 @@
-!.vim/bundle/.neobundle
 .vim/bundle/*
+!.vim/bundle
+!.vim/bundle/.neobundle
+!.vim/bundle/neobundle.vim
+
