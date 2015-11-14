@@ -4,7 +4,7 @@ set number
 set textwidth=0
 
 set smartindent
-"set expandtab
+set expandtab
 set autoindent
 "HTML特有のインデントを切る.
 autocmd FileType html :setlocal indentexpr=""
@@ -28,6 +28,8 @@ augroup AutoHTML
 		\ emmet#isExpandable() ? "\<plug>(emmet-expand-abbr)" :
 		\ "\<tab>"
 augroup END
+
+autocmd BufNewFile, BufRead *.php setf html
 
 nnoremap s <Nop>
 
@@ -127,6 +129,14 @@ autocmd User plugin-template-loaded
 	\	|		silent! execute 'normal! "_da>'
 	\	|	endif
 
+" EditorConfig 異なるEditor間で設定を共有する?
+" .editorconfigファイルに則ってインデントの深さとかを設定してくれる.
+" したがって設定を共有出来る.
+NeoBundle 'editorconfig/editorconfig-vim'
+
+" CoffeeScriptのハイライトをするプラグイン
+NeoBundle 'kchmck/vim-coffee-script'
+
 "color scheme Vimの色分けとか背景色とかのやつ
 NeoBundle 'tomasr/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
@@ -162,7 +172,7 @@ filetype indent on
 set t_Co=256
 
 syntax on
-colorscheme hybrid
-"colorscheme molokai
+"colorscheme hybrid
+colorscheme molokai
 highlight Normal ctermbg=none
 

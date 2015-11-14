@@ -1,4 +1,5 @@
 VimClojure
+editorconfig-vim
 emmet-vim
 jellybeans.vim
 molokai
@@ -9,6 +10,7 @@ open-browser.vim
 previm
 syntastic
 unite.vim
+vim-coffee-script
 vim-hybrid
 vim-indent-guides
 vim-markdown

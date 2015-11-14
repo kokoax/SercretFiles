@@ -24,7 +24,7 @@ setopt list_types
 
 ##補完機能の強化
 autoload -U compinit
-compinit
+compinit -u
 
 #Tab補完を詰めて表示する
 setopt list_packed

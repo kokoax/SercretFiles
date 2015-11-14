@@ -1,6 +1,20 @@
 #bindkey
 bindkey -M viins '^L' vi-cmd-mode
-
 #alias
-#alias ls="ls --G=auto"
+alias ls="ls -G"
+alias ll="ls -lG"
+alias la="ls -laG"
+
+case $"{OSTYPE}" in
+  darwin*)
+    alias ls="ls -G"
+    alias ll="ls -lG"
+    alias la="ls -laG"
+  ;;
+  linux*)
+    alias ls="ls --G=auto"
+    alias ll="ls --lG=auto"
+    alias la="ls --laG=auto"
+  ;;
+esac
 

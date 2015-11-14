@@ -1,1 +1,1 @@
-/home/kokoax//.vim
+/Users/Tokoi/SecretFiles/.vim

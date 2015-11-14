@@ -72,6 +72,7 @@
 'syntastic_style_error_symbol'	syntastic.txt	/*'syntastic_style_error_symbol'*
 'syntastic_style_warning_symbol'	syntastic.txt	/*'syntastic_style_warning_symbol'*
 'syntastic_warning_symbol'	syntastic.txt	/*'syntastic_warning_symbol'*
+:EditorConfigReload	editorconfig.txt	/*:EditorConfigReload*
 :Emmet	emmet.txt	/*:Emmet*
 :EmmetInstall	emmet.txt	/*:EmmetInstall*
 :Errors	syntastic.txt	/*:Errors*
@@ -250,6 +251,7 @@ CTRL-C_CTRL-C	vim-slime.txt	/*CTRL-C_CTRL-C*
 CTRL-C_v	vim-slime.txt	/*CTRL-C_v*
 DocLookupInteractive	clojure.txt	/*DocLookupInteractive*
 DocLookupWord	clojure.txt	/*DocLookupWord*
+EditorConfig#AddNewHook()	editorconfig.txt	/*EditorConfig#AddNewHook()*
 Emmet	emmet.txt	/*Emmet*
 EvalBlock	clojure.txt	/*EvalBlock*
 EvalFile	clojure.txt	/*EvalFile*
@@ -346,6 +348,14 @@ aw	clojure.txt	/*aw*
 clj-nailgun-server	clojure.txt	/*clj-nailgun-server*
 clojure.vim	clojure.txt	/*clojure.vim*
 eb	clojure.txt	/*eb*
+editorconfig-advanced	editorconfig.txt	/*editorconfig-advanced*
+editorconfig-commands	editorconfig.txt	/*editorconfig-commands*
+editorconfig-contents	editorconfig.txt	/*editorconfig-contents*
+editorconfig-hook	editorconfig.txt	/*editorconfig-hook*
+editorconfig-installation	editorconfig.txt	/*editorconfig-installation*
+editorconfig-overview	editorconfig.txt	/*editorconfig-overview*
+editorconfig-settings	editorconfig.txt	/*editorconfig-settings*
+editorconfig.txt	editorconfig.txt	/*editorconfig.txt*
 ef	clojure.txt	/*ef*
 el	clojure.txt	/*el*
 emmet	emmet.txt	/*emmet*
@@ -417,6 +427,13 @@ fd	clojure.txt	/*fd*
 filter-overrides	syntastic.txt	/*filter-overrides*
 ft-clj-indent	clojure.txt	/*ft-clj-indent*
 ft-clj-syntax	clojure.txt	/*ft-clj-syntax*
+g:EditorConfig_core_mode	editorconfig.txt	/*g:EditorConfig_core_mode*
+g:EditorConfig_exclude_patterns	editorconfig.txt	/*g:EditorConfig_exclude_patterns*
+g:EditorConfig_exec_path	editorconfig.txt	/*g:EditorConfig_exec_path*
+g:EditorConfig_max_line_indicator	editorconfig.txt	/*g:EditorConfig_max_line_indicator*
+g:EditorConfig_preserve_formatoptions	editorconfig.txt	/*g:EditorConfig_preserve_formatoptions*
+g:EditorConfig_python_files_dir	editorconfig.txt	/*g:EditorConfig_python_files_dir*
+g:EditorConfig_verbose	editorconfig.txt	/*g:EditorConfig_verbose*
 g:emmet_curl_command	emmet.txt	/*g:emmet_curl_command*
 g:emmet_docroot	emmet.txt	/*g:emmet_docroot*
 g:emmet_html5	emmet.txt	/*g:emmet_html5*
