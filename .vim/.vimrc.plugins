@@ -57,7 +57,7 @@ NeoBundle 'mattn/emmet-vim'
 let g:user_emmet_leader_key = '<C-y>'
 
 "htmlのオートインデントを行うプラグイン
-let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_inctags = 'html,body,head,tbody'
 
 "特定のファイルを開いた時にテンプレートを差し込む
 NeoBundle 'thinca/vim-template'
@@ -73,7 +73,7 @@ endfunction
 
 "<+CURSOR+>にカーソルを移動する。
 autocmd User plugin-template-loaded
-	\		if search('<+CURSOR+>')
+  \     if search('<+CURSOR+>')
 	\	|		silent! execute 'normal! "_da>'
 	\	|	endif
 
