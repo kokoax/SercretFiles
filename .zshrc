@@ -5,13 +5,18 @@ LANG=ja_JP.UTF-8
 bindkey -v
 
 #コマンドを10000保存する
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+
+#historyコマンドを共有しない
+setopt HIST_NO_STORE
 
 #以下２つは同じコマンドを記録しないようにするオプション
-setopt hist_ignore_dups
-setopt share_history
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
+
+setopt hist_expand
 
 #ビープ音を出さない
 setopt nolistbeep

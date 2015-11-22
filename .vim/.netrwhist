@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/kokoax/.jd'
 let g:netrw_dirhist_2='/home/kokoax/SercretFiles/.vim'
 let g:netrw_dirhist_3='/home/kokoax/SercretFiles/.vim/template'
 let g:netrw_dirhist_4='/Users/Tokoi/english'
 let g:netrw_dirhist_5='/Applications/MAMP/htdocs/marble_market_wp/wp-content/plugins/photospace'
+let g:netrw_dirhist_6='/Users/cheekit-share/media_'

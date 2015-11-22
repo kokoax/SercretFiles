@@ -172,7 +172,8 @@ filetype indent on
 set t_Co=256
 
 syntax on
-"colorscheme hybrid
-colorscheme molokai
+colorscheme hybrid
+"colorscheme molokai
+"colorscheme jellybeans
 highlight Normal ctermbg=none
 
