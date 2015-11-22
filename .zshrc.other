@@ -1,5 +1,15 @@
 #bindkey
 bindkey -M viins '^L' vi-cmd-mode
+
+#C-^ で一つ上のディレクトリへ
+function cdup() {
+  echo
+  cd ..
+  zle reset-prompt
+}
+zle -N cdup
+bindkey '^^' cdup
+
 #alias
 alias ls="ls -G"
 alias ll="ls -lG"
