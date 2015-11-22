@@ -20,6 +20,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
+set nocompatible
+
 augroup AutoHTML
 	autocmd!
 	autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>

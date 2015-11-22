@@ -17,6 +17,7 @@ alias la="ls -laG"
 
 case ${OSTYPE} in
   darwin*)
+    alias vim="vim -u $HOME/.vim/vimrc"
     alias ls="ls -G"
     alias ll="ls -lG"
     alias la="ls -laG"
