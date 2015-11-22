@@ -15,16 +15,16 @@ alias ls="ls -G"
 alias ll="ls -lG"
 alias la="ls -laG"
 
-case $"{OSTYPE}" in
+case ${OSTYPE} in
   darwin*)
     alias ls="ls -G"
     alias ll="ls -lG"
     alias la="ls -laG"
   ;;
   linux*)
-    alias ls="ls --G=auto"
-    alias ll="ls --lG=auto"
-    alias la="ls --laG=auto"
+    alias ls="ls --color"
+    alias ll="ls -l --color"
+    alias la="ls -la --color"
   ;;
 esac
 

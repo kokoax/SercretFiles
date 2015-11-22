@@ -175,5 +175,6 @@ syntax on
 colorscheme hybrid
 "colorscheme molokai
 "colorscheme jellybeans
+
 highlight Normal ctermbg=none
 
