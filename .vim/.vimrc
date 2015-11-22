@@ -172,9 +172,10 @@ filetype indent on
 set t_Co=256
 
 syntax on
-colorscheme hybrid
-"colorscheme molokai
-"colorscheme jellybeans
+
+if filereadable( expand( '$HOME/.vimrc.scheme' ) )
+  source $HOME/.vim/.vimrc.scheme
+endif
 
 highlight Normal ctermbg=none
 

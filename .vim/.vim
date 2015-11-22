@@ -1,1 +1,0 @@
-/Users/Tokoi/SecretFiles/.vim
