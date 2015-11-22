@@ -90,6 +90,10 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 
+"どのcolorschemeでも背景透過できるようにする.
+NeoBundle 'miyakogi/seiya.vim'
+let g:seiya_auto_enable = !has( 'gui_running' )
+
 "NeoBundleで新たしいプラグインがあったらインストールが起動する。
 NeoBundleCheck
 call neobundle#end()
