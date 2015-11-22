@@ -174,7 +174,7 @@ set t_Co=256
 syntax on
 
 if filereadable( expand( '$HOME/.vimrc.scheme' ) )
-  source $HOME/.vimrc.scheme
+  source $HOME/.vim/.vimrc.scheme
 endif
 
 highlight Normal ctermbg=none
