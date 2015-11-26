@@ -1,5 +1,7 @@
 #bindkey
 bindkey -M viins '^L' vi-cmd-mode
+bindkey -M viins '^J' vi-cmd-mode
+bindkey -M viins 'jj' vi-cmd-mode
 
 #C-^ で一つ上のディレクトリへ
 function cdup() {

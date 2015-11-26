@@ -64,5 +64,7 @@ nnoremap sn gt
 nnoremap sp gT
 
 imap <C-l> <ESC>
+imap <C-j> <ESC>
+imap jj <ESC>
 
 
