@@ -1,3 +1,8 @@
+if filereadable( expand( '$HOME/.vim/.vimrc.options' ) )
+  source $HOME/.vim/.vimrc.options
+endif
+
+
 if filereadable( expand( '$HOME/.vim/.vimrc.keybind' ) )
   source $HOME/.vim/.vimrc.keybind
 endif
