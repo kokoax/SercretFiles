@@ -11,8 +11,7 @@
 #include <time.h>
 #include <unistd.h>
 
-#include <thread>
-#include <future>
+using namespace std;
 
 int main( void ){
 	<+CURSOR+>
