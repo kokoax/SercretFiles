@@ -20,14 +20,27 @@ alias la="ls -laG"
 case ${OSTYPE} in
   darwin*)
     alias vim="vim -u $HOME/.vim/vimrc"
+    alias l="ls -G"
     alias ls="ls -G"
     alias ll="ls -lG"
-    alias la="ls -laG"
+    alias la="ls -aG"
+    alias lla="ls -alG"
+
+    alias less="less -R"
+
+    alias history-all="history -E 1"
   ;;
   linux*)
+    alias l="ls --color"
     alias ls="ls --color"
     alias ll="ls -l --color"
-    alias la="ls -la --color"
+    alias la="ls -a --color"
+    alias lla="ls -la --color"
+
+    alias less="less -R"
+
+    alias history-all="history -E 1"
+    alias spdmeter="spdmeter -rx wlp1s0 -tx wlp1s0"
   ;;
 esac
 

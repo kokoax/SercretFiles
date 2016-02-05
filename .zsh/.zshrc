@@ -6,17 +6,18 @@ bindkey -v
 
 #コマンドを10000保存する
 export HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export SAVEHIST=10000
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 #historyコマンドを共有しない
-setopt HIST_NO_STORE
+#setopt HIST_NO_STORE
 
 #以下２つは同じコマンドを記録しないようにするオプション
 setopt HIST_IGNORE_DUPS
 setopt SHARE_HISTORY
 
-setopt hist_expand
+#開始と終了を記録?
+setopt HIST_EXPAND
 
 #ビープ音を出さない
 setopt nolistbeep
@@ -28,7 +29,7 @@ setopt prompt_subst
 setopt list_types
 
 ##補完機能の強化
-autoload -U compinit
+autoload -Uz compinit
 compinit -u
 
 #Tab補完を詰めて表示する
@@ -41,12 +42,24 @@ setopt auto_pushd
 unsetopt correct
 set -0
 
+#aliasを展開して補完
+unsetopt complete_aliases
+
 setopt auto_cd		#cdを入力しなくてもディレクトリを移動できる
 setopt auto_pushd	#移動したディレクトリを記録する
 
+#補完した候補を自動表示
 autoload predict-on
 predict-on
 
-[ -f ~/.zshrc.other ] && source ~/.zshrc.other
-[ -f ~/.zshrc.color ] && source ~/.zshrc.color
+#historyとzhr_hisotoryの共有
+setopt SHARE_HISTORY
+
+autoload bashcompinit
+bashcompinit
+
+[ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
+[ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
+[ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
+[ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
 
