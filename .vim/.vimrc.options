@@ -5,6 +5,8 @@ set textwidth=0
 
 set smartindent
 set expandtab
+autocmd BufNewFile,BufRead *.ws set noexpandtab
+
 set autoindent
 "HTML特有のインデントを切る.
 autocmd FileType html :setlocal indentexpr=''

@@ -1,3 +1,7 @@
+#一定時間で画面がOFFにならないようにする
+xset s off        #BlankTimeをoff
+xset dpms 0 0 0   #DPMSの機能をそれぞれoff
+
 # Created by newuser for 5.0.2
 LANG=ja_JP.UTF-8
 
