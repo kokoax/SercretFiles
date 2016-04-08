@@ -13,6 +13,13 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
 
+#GO言語のリポジトリの位置
+export GOPATH=$HOME/go/third-party:$HOME/go/my-project
+export PATH=$HOME/go/third-party/bin:$HOME/go/my-project/bin:$PATH # binをPATHに追加するのも忘れずに
+
+# キャッシュを使うことでパッケージマネージャのupdateを速くする
+zstyle ':completion:*' use-cache true
+
 #historyコマンドを共有しない
 #setopt HIST_NO_STORE
 
@@ -32,7 +39,7 @@ setopt prompt_subst
 ##補完候補一覧をファイル種別ごとに色を変える
 setopt list_types
 
-##補完機能の強化
+##補完機能の有効化
 autoload -Uz compinit
 compinit -u
 
@@ -62,8 +69,12 @@ setopt SHARE_HISTORY
 autoload bashcompinit
 bashcompinit
 
+# 補完を選択できるオプション？
+#setopt menu_complete
+
 [ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
 [ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
 [ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
 [ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
+#[ -f ~/repo/zsh-tab-completion/zsh-tab-completion ]   && source ~/repo/zsh-tab-completion/zsh-tab-completion
 
