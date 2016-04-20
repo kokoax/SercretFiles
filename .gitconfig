@@ -1,0 +1,8 @@
+[user]
+	name = Yoshitomo Tokoi
+	email = yomo4808@gmail.com
+
+[url "github:"]
+  InsteadOf = https://github.com/
+  InsteadOf = git@github.com:
+
