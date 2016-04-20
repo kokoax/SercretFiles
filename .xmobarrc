@@ -1,0 +1,48 @@
+Config { font = "xft:Sans-9:bold"
+           , bgColor = "black"
+           , fgColor = "grey"
+           -- , position = TopW L 100
+           , position = TopSize C 100 12
+           , lowerOnStart = False
+           , border = NoBorder
+           , borderColor = "#26a69a"
+           , commands = [ Run Network
+                          "wlp1s0"
+                          [ "-t", "wlp1s0: ↓ <rx> : ↑ <tx>"
+                          , "-L", "0"
+                          , "-H", "32"
+                          , "--normal", "green"
+                          , "--high", "red"
+                          ] 10
+
+                        , Run MultiCpu
+                          [ "-t", "<total0>. <total1>"
+                          , "-L", "40"
+                          , "-H", "90"
+                          , "--normal", "green"
+                          , "--high", "red"
+                          ] 50
+
+                        , Run Memory ["-t","Mem: <usedratio>%"] 10
+                        , Run Swap [] 10
+
+                        , Run Battery
+                        [   "-t", "Batt: <acstatus>"
+                          , "-L", "20"
+                          , "-H", "80"
+                          , "-h", "green"
+                          , "-n", "yellow"
+                          , "-l", "red"
+                          , "--"
+                            , "-o", "<left>% (<timeleft>)"
+                            , "-O", "Charging <left>%"
+                            , "-i", "<left>%"
+                        ] 50
+                        , Run Com "/home/kokoax/.bin/volume.sh" [] "vol" 10
+                        , Run Date "%a %m/%d %Y %H:%M:%S" "date" 10
+                        , Run StdinReader
+                        ]
+           , sepChar = "%"
+           , alignSep = "}{"
+           , template = "%StdinReader% }{  <fc=#5588aa>≫</fc> %multicpu% <fc=#bb6655>≫</fc> %battery% <fc=#c5115c>≫</fc> %vol% <fc=#c5c511>≫</fc> %memory% <fc=#11aa11>≫</fc> %wlp1s0% <fc=#ee9a00>%date%</fc>"
+
