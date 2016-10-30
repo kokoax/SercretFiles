@@ -17,6 +17,9 @@ export SAVEHIST=100000
 export GOPATH=$HOME/go/third-party:$HOME/go/my-project
 export PATH=$HOME/go/third-party/bin:$HOME/go/my-project/bin:$PATH # binをPATHに追加するのも忘れずに
 
+# local binファイル をエクスポート
+export PATH=$HOME/.bin:$PATH # binをPATHに追加するのも忘れずに
+
 # キャッシュを使うことでパッケージマネージャのupdateを速くする
 zstyle ':completion:*' use-cache true
 
@@ -77,4 +80,24 @@ bashcompinit
 [ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
 [ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
 #[ -f ~/repo/zsh-tab-completion/zsh-tab-completion ]   && source ~/repo/zsh-tab-completion/zsh-tab-completion
+
+# rbenv
+export PATH="/home/kokoax/.rbenv/shims:${PATH}"
+export RBENV_SHELL=zsh
+source '/usr/lib/rbenv/libexec/../completions/rbenv.zsh'
+command rbenv rehash 2>/dev/null
+rbenv() {
+  local command
+  command="$1"
+  if [ "$#" -gt 0 ]; then
+    shift
+  fi
+
+  case "$command" in
+  rehash|shell)
+    eval "$(rbenv "sh-$command" "$@")";;
+  *)
+    command rbenv "$command" "$@";;
+  esac
+}
 

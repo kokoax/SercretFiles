@@ -6,7 +6,18 @@ NeoBundle 'VimClojure'
 NeoBundle 'Shougo/vimshell'
 "NeoBundle 'Shougo/neosnippet'
 NeoBundle 'jpalardy/vim-slime'
+" プログラムを保存するたびに解析してエラーやワーニングをハイライトしてくれる(静的解析)
 NeoBundle 'scrooloose/syntastic'
+" rubyの静的解析の設定(rubocop)
+let g:synctastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:synctastic_ruby_checkers = ['rubocop']
+
+" 構文の終わりを自動で補完
+" NeoBundle 'kana/vim-smartinput'
+" NeoBundle 'cohama/vim-smartinput-endwise'
+NeoBundle 'tpope/vim-endwise'
+
+" call smartinput_endwise#define_default_rules()
 
 "MarkDownプラグイン
 NeoBundle 'plasticboy/vim-markdown'
@@ -80,7 +91,7 @@ autocmd User plugin-template-loaded
 " EditorConfig 異なるEditor間で設定を共有する?
 " .editorconfigファイルに則ってインデントの深さとかを設定してくれる.
 " したがって設定を共有出来る.
-NeoBundle 'editorconfig/editorconfig-vim'
+"NeoBundle 'editorconfig/editorconfig-vim'
 
 " CoffeeScriptのハイライトをするプラグイン
 NeoBundle 'kchmck/vim-coffee-script'
@@ -90,12 +101,24 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'w0ng/vim-hybrid'
 
+" ドキュメント参照
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'yuku-t/vim-ref-ri'
+
 "どのcolorschemeでも背景透過できるようにする.
 NeoBundle 'miyakogi/seiya.vim'
 let g:seiya_auto_enable = !has( 'gui_running' )
 
 "NeoBundleで新たしいプラグインがあったらインストールが起動する。
 NeoBundleCheck
+
+" ステータスバーをグラフィカルに
+NeoBundle 'itchyny/lightline.vim'
+set laststatus=2 " ステータスラインを常に表示
+set showmode " 現在のモードを表示
+set showcmd " 打ったコマンドをステータスラインの下に表示
+set ruler " ステータスラインの右側にカーソルの現在位置を表示する
+
 call neobundle#end()
 
 if has( 'mac' )

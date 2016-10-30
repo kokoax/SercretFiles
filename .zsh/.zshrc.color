@@ -21,7 +21,7 @@ case ${OSTYPE} in
   linux*)
     case ${UID} in
       0)
-        PROMPT="[ %{[38;5;243m%}%T %{[38;5;034m%}%n %{[38;5;109m%}%/ %{[38;5;82m%}] "
+        PROMPT="%{[38;5;82m%}[ %{[38;5;243m%}%T %{[38;5;034m%}%n %{[38;5;109m%}%/ %{[38;5;82m%}] "
         PROMPT2="%B%{[31m%}%/#%{[m%}%b "
         SPROMPT="%{[31m%}%r is correct? [nyae]:%{[m%} "
         [ -n "${REMOTHEHOST}${SSH_CONNECTION}" ] &&

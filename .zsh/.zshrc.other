@@ -12,10 +12,13 @@ function cdup() {
 zle -N cdup
 bindkey '^^' cdup
 
-#alias
-alias ls="ls -G"
-alias ll="ls -lG"
-alias la="ls -laG"
+# alias
+# alias ls="ls -G"
+# alias ll="ls -lG"
+# alias la="ls -laG"
+
+alias elona+="wine /home/kokoax/Game/elonaplus1.36R/elona.exe"
+alias elona="wine /home/kokoax/Game/elona/elona.exe"
 
 case ${OSTYPE} in
   darwin*)
@@ -52,6 +55,11 @@ case ${OSTYPE} in
     alias ncmpcpp-local="ncmpcpp -h localhost"
     alias ncmpcpp-mpd="ncmpcpp -h jyoshitune.dip.jp"
     alias ncmpcpp-mpd-local="ncmpcpp -h 192.168.10.128"
+
+    alias killconky="killall conky"
+    alias redwm="cd ~/dwm-git; updpkgsums; makepkg -fi --noconfirm; killall dwm"
+
+    alias cls="clisp"
   ;;
 esac
 

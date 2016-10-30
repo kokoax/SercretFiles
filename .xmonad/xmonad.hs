@@ -37,6 +37,8 @@ import XMonad.Util.EZConfig( additionalKeys )
 -- import XMonad.Actions.UpdatePointer
 -- import System.Exit
 
+import qualified XMonad.Hooks.ICCCMFocus as ICCCMFocus
+
 modm = mod4Mask
 
 myKeys =
@@ -81,7 +83,9 @@ myLayout =    ( spacing 8 $ ResizableTall 1 ( 1/100 ) ( 4/7 ) [] )
           ||| ( spacing 3 $ ThreeColMid 1 ( 1/100 ) ( 16/35 ) )
           ||| ( spacing 8 $ Mirror 0.5 [] )
 -}
-myLayout = tile ||| mtile ||| full ||| three ||| tilem2 ||| tilem3
+
+{-
+myLayout = tile ||| mtile ||| full ||| three ||| tilem2 ||| tilem3 ||| layoutHook defaultConfig
   where
     rt = ResizableTall 1 (2/100) (1/2) []
     rt2 = ResizableTall 2 ( 1/100 ) ( 1/2 ) []
@@ -94,7 +98,7 @@ myLayout = tile ||| mtile ||| full ||| three ||| tilem2 ||| tilem3
     three = renamed [Replace "[=]"] $ spacing 3 $ smartBorders tcm
     tilem2 = renamed [Replace "[]=M2"]$ spacing 1 $ noBorders $ Mirror rt2
     tilem3 = renamed [Replace "[]=M3"]$ spacing 1 $ noBorders $ Mirror rt3
-
+-}
 
 -- myWorkspaces = [ "  Main  ", "  Browser  ", "  Media  ", "  Work  ", "  Tray  ", "  Tmp1  ", "  Tmp2  ", "  Tmp3  ", "  Music  " ]
 
@@ -109,15 +113,18 @@ main = do
   xmproc <- spawnPipe "xmobar"
   xmonad $ defaultConfig
     { -- manageHook = manageDocks <+> manageHook defaultConfig
-      manageHook = myManageHookShift  <+> myManageHookShift
+      manageHook = myManageHookShift <+> myManageHookShift
     , workspaces = myWorkspaces
-    , layoutHook = avoidStruts $ myLayout
+    -- , layoutHook = avoidStruts $ myLayout
+    , layoutHook = avoidStruts $ layoutHook defaultConfig
+    -- , logHook = ICCCMFocus.takeTopFocus
     , logHook = dynamicLogWithPP $ xmobarPP
       { ppOutput = hPutStrLn xmproc
       , ppTitle = xmobarColor "green" "" . shorten 50
       -- , fadeInactiveLogHook 0xdddddddd
       }
-    , terminal           = "gnome-terminal"
+    -- , terminal           = "gnome-terminal"
+    , terminal           = "urxvt"
     , borderWidth        = 2
     , normalBorderColor  = "#333333"
     , focusedBorderColor = "#cd8b00"

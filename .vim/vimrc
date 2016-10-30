@@ -22,6 +22,7 @@ filetype off
 filetype plugin indent on
 filetype indent on
 
+" 256色使う設定
 set t_Co=256
 
 syntax on

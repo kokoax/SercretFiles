@@ -26,6 +26,16 @@ set nocompatible
 
 set guioptions+=a
 
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
+" 閉じカッコが入力されたら,対応するカッコをハイライトする
+set showmatch
+
+" 選択した行をハイライト
+set cursorline
+
 augroup AutoHTML
 	autocmd!
 	autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>

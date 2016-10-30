@@ -1,0 +1,14 @@
+
+xmonad.hs:40:1: warning: [-Wdeprecations]
+    Module ‘XMonad.Hooks.ICCCMFocus’ is deprecated:
+      XMonad.Hooks.ICCCMFocus: xmonad>0.10 core merged issue 177
+
+xmonad.hs:114:12: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+
+xmonad.hs:119:45: warning: [-Wdeprecations]
+    In the use of ‘defaultConfig’
+    (imported from XMonad, but defined in XMonad.Config):
+    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
