@@ -34,11 +34,11 @@ case ${OSTYPE} in
     alias history-all="history -E 1"
   ;;
   linux*)
-    alias l="ls --color"
-    alias ls="ls --color"
-    alias ll="ls -l --color"
-    alias la="ls -a --color"
-    alias lla="ls -la --color"
+    alias l="ls -p --color"
+    alias ls="ls -p --color"
+    alias ll="ls -lp --color"
+    alias la="ls -ap --color"
+    alias lla="ls -lap --color"
 
     alias less="less -R"
 
