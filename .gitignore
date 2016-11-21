@@ -1,8 +1,8 @@
 .vim/bundle/*
 .vim/dein/repos/github.com/*
 .vim/dein/.cache/*
-!.vim/bundle
-!.vim/bundle/.gitkeep
+!.vim/dein
+!.vim/dein/.gitkeep
 
 *.swap
 
