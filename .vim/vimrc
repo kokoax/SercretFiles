@@ -7,11 +7,6 @@ if filereadable( expand( '$HOME/.vim/.vimrc.keybind' ) )
   source $HOME/.vim/.vimrc.keybind
 endif
 
-if has( 'vim_starting' )
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin( expand( '$HOME/.vim/bundle/' ) )
-endif
-
 if filereadable( expand( '$HOME/.vim/.vimrc.plugins' ) )
   source $HOME/.vim/.vimrc.plugins
 endif

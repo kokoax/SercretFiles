@@ -24,6 +24,9 @@ nnoremap s+ <C-w>+
 nnoremap s- <C-w>-
 nnoremap s= <C-w>=
 
+nnoremap j gj
+nnoremap k gk
+
 nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
