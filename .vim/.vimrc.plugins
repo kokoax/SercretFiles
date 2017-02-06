@@ -12,8 +12,23 @@ call dein#add( 'Shougo/dein.vim' )
 
 call dein#add( 'Shougo/vimproc', {'build': 'make'} )
 call dein#add( 'VimClojure' )
+
+" vim内でshell(vimshell)を実行できる.
 call dein#add( 'Shougo/vimshell' )
+" ,is: シェルを起動
+nnoremap <silent> ,is :VimShell<CR>
+
 "call dein#add( 'Shougo/neosnippet' )
+""特定のファイルを開いた時にテンプレートを差し込む
+" call dein#add( 'thinca/vim-template' )
+" :Template で特定の特定のテンプレートを挿入できる
+call dein#add( 'mattn/sonictemplate-vim' )
+let g:sonictemplate_vim_template_dir = [
+      \ '~/.vim/template'
+      \]
+
+"
+" 何やってんのこれ( syntax high light? )
 call dein#add( 'jpalardy/vim-slime' )
 " プログラムを保存するたびに解析してエラーやワーニングをハイライトしてくれる(静的解析)
 call dein#add( 'scrooloose/syntastic' )
@@ -21,7 +36,7 @@ call dein#add( 'scrooloose/syntastic' )
 let g:synctastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
 let g:synctastic_ruby_checkers = ['rubocop']
 
-" 構文の終わりを自動で補完
+" 構文の終わりを自動で補完(do end)
 " call dein#add( 'kana/vim-smartinput' )
 " call dein#add( 'cohama/vim-smartinput-endwise' )
 call dein#add( 'tpope/vim-endwise' )
@@ -79,24 +94,6 @@ let g:user_emmet_leader_key = '<C-y>'
 "htmlのオートインデントを行うプラグイン
 let g:html_indent_inctags = 'html,body,head,tbody'
 
-"特定のファイルを開いた時にテンプレートを差し込む
-call dein#add( 'thinca/vim-template' )
-
-"<+FILE_NAME+>にファイル名を挿入する。
-"<+DATE+>に日付を挿入する。
-autocmd User plugin-template-loaded call s:template_keywords()
-function! s:template_keywords()
-  silent! %s/<+FILE_NAME+>/\=expand('%:r')/g
-  silent! %s/<+FULL_NAME+>/\=expand('%:t')/g
-  silent! %s/<+DATE+>/\=strftime('%Y-%m-%d')/g
-endfunction
-
-"<+CURSOR+>にカーソルを移動する。
-autocmd User plugin-template-loaded
-      \     if search('<+CURSOR+>')
-      \	|		silent! execute 'normal! "_da>'
-      \	|	endif
-
 " EditorConfig 異なるEditor間で設定を共有する?
 " .editorconfigファイルに則ってインデントの深さとかを設定してくれる.
 " したがって設定を共有出来る.
@@ -105,7 +102,7 @@ autocmd User plugin-template-loaded
 " CoffeeScriptのハイライトをするプラグイン
 call dein#add( 'kchmck/vim-coffee-script' )
 
-"color scheme Vimの色分けとか背景色とかのやつ
+"color scheme
 call dein#add( 'tomasr/molokai' )
 call dein#add( 'nanotech/jellybeans.vim' )
 call dein#add( 'w0ng/vim-hybrid' )

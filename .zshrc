@@ -2,8 +2,14 @@
 xset s off        #BlankTimeをoff
 xset dpms 0 0 0   #DPMSの機能をそれぞれoff
 
+# コンソール透過
+transset-df 0.8 -p
+
 # Created by newuser for 5.0.2
 LANG=ja_JP.UTF-8
+
+# neovim のinit.vimのフォルダを探すのに利用
+export XDG_CONFIG_HOME=$HOME/.config
 
 #ターミナル入力キーバインドをvi風にする
 bindkey -v
@@ -72,6 +78,9 @@ setopt SHARE_HISTORY
 autoload bashcompinit
 bashcompinit
 
+# roswell のバイナリへのパス
+export PATH=$HOME/.roswell/bin:$PATH
+
 # 補完を選択できるオプション？
 #setopt menu_complete
 
@@ -79,25 +88,43 @@ bashcompinit
 [ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
 [ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
 [ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
+# GoEnv
+export GOENVGOROOT=$HOME/.goenvs
+export GOENVTARGET=$HOME/.bin
+export GOENVHOME=$HOME/repos/GoProjects
+
+[ -f $GOENVTARGET/goenvwrapper.sh ]  &&  source $GOENVTARGET/goenvwrapper.sh
+
+export GOROOT=$GOENVGOROOT/release
+export GOPATH=$GOENVGOHOME
+export GOBIN=$GOPATH/bin
+export PATH=$GOROOT/bin:$PATH
+export GOROOT_BOOTSTRAP=$GOENVGOROOT/go1.4
+
 #[ -f ~/repo/zsh-tab-completion/zsh-tab-completion ]   && source ~/repo/zsh-tab-completion/zsh-tab-completion
 
 # rbenv
-export PATH="/home/kokoax/.rbenv/shims:${PATH}"
-export RBENV_SHELL=zsh
-source '/usr/lib/rbenv/libexec/../completions/rbenv.zsh'
-command rbenv rehash 2>/dev/null
-rbenv() {
-  local command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
 
-  case "$command" in
-  rehash|shell)
-    eval "$(rbenv "sh-$command" "$@")";;
-  *)
-    command rbenv "$command" "$@";;
-  esac
-}
+#export PATH="/home/kokoax/.rbenv/shims:${PATH}"
+#export RBENV_SHELL=zsh
+#source '/usr/lib/rbenv/libexec/../completions/rbenv.zsh'
+#command rbenv rehash 2>/dev/null
+#rbenv() {
+#  local command
+#  command="$1"
+#  if [ "$#" -gt 0 ]; then
+#    shift
+#  fi
+#
+#  case "$command" in
+#  rehash|shell)
+#    eval "$(rbenv "sh-$command" "$@")";;
+#  *)
+  #    command rbenv "$command" "$@";;
+  #  esac
+  #}
+
 
