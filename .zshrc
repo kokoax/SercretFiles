@@ -3,7 +3,7 @@ xset s off        #BlankTimeをoff
 xset dpms 0 0 0   #DPMSの機能をそれぞれoff
 
 # コンソール透過
-transset-df 0.8 -p
+transset-df 0.8 -p 1> /dev/null
 
 # Created by newuser for 5.0.2
 LANG=ja_JP.UTF-8
@@ -84,14 +84,27 @@ export PATH=$HOME/.roswell/bin:$PATH
 # 補完を選択できるオプション？
 #setopt menu_complete
 
+# コマンドのオプション補完ファイルをfpathに追記
+# export fpath=$fpath:$HOME/.zsh/.lib
+
+# タブ補完で表示されるものの設定
+# zstyle ':completion:*' verbose yes
+# zstyle ':completion:*:descriptions' format '%B%d%b'
+# zstyle ':completion:*:messages' format '%d'
+# zstyle ':completion:*:warnings' format 'No matches for: %d'
+# zstyle ':completion:*' group-name ''
+
 [ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
 [ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
 [ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
 [ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
+
+# [ -f ~/.bin/zen ] && ~/.bin/zen
+
 # GoEnv
 export GOENVGOROOT=$HOME/.goenvs
 export GOENVTARGET=$HOME/.bin
-export GOENVHOME=$HOME/repos/GoProjects
+export GOENVHOME=$HOME/repos/github/go
 
 [ -f $GOENVTARGET/goenvwrapper.sh ]  &&  source $GOENVTARGET/goenvwrapper.sh
 

@@ -135,6 +135,17 @@ set showmode " 現在のモードを表示
 set showcmd " 打ったコマンドをステータスラインの下に表示
 set ruler " ステータスラインの右側にカーソルの現在位置を表示する
 
+" rust scheme
+call dein#add( 'rust-lang/rust.vim' )
+" :QuickRun でファイル保存時にシンタックスチェック
+let g:quickrun_config = get(g:, 'quickrun_config', {})
+let g:quickrun_config['syntax/rust'] = {
+            \   'command' : 'rustc',
+            \   'cmdopt' : '-Zparse-only',
+            \   'exec' : '%c %o %s:p',
+            \   'outputter' : 'quickfix',
+            \ }
+
 " call dein#install()
 call dein#end()
 
