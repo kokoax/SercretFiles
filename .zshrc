@@ -23,8 +23,10 @@ export SAVEHIST=100000
 export GOPATH=$HOME/go/third-party:$HOME/go/my-project
 export PATH=$HOME/go/third-party/bin:$HOME/go/my-project/bin:$PATH # binをPATHに追加するのも忘れずに
 
-# local binファイル をエクスポート
+# home binファイル をエクスポート
 export PATH=$HOME/.bin:$PATH # binをPATHに追加するのも忘れずに
+# local binファイル をエクスポート
+export PATH=$HOME/.local/bin:$PATH # binをPATHに追加するのも忘れずに
 
 # キャッシュを使うことでパッケージマネージャのupdateを速くする
 zstyle ':completion:*' use-cache true
@@ -94,25 +96,12 @@ export PATH=$HOME/.roswell/bin:$PATH
 # zstyle ':completion:*:warnings' format 'No matches for: %d'
 # zstyle ':completion:*' group-name ''
 
-[ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
-[ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
-[ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
-[ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
-
 # [ -f ~/.bin/zen ] && ~/.bin/zen
 
 # GoEnv
-export GOENVGOROOT=$HOME/.goenvs
-export GOENVTARGET=$HOME/.bin
-export GOENVHOME=$HOME/repos/github/go
-
-[ -f $GOENVTARGET/goenvwrapper.sh ]  &&  source $GOENVTARGET/goenvwrapper.sh
-
-export GOROOT=$GOENVGOROOT/release
-export GOPATH=$GOENVGOHOME
-export GOBIN=$GOPATH/bin
-export PATH=$GOROOT/bin:$PATH
-export GOROOT_BOOTSTRAP=$GOENVGOROOT/go1.4
+export GOENV_ROOT=$HOME/.goenv
+export PATH=$GOENV_ROOT/bin:$PATH
+eval "$(goenv init -)"
 
 #[ -f ~/repo/zsh-tab-completion/zsh-tab-completion ]   && source ~/repo/zsh-tab-completion/zsh-tab-completion
 
@@ -121,23 +110,13 @@ export GOROOT_BOOTSTRAP=$GOENVGOROOT/go1.4
   export PATH=${HOME}/.rbenv/bin:${PATH} && \
   eval "$(rbenv init -)"
 
-#export PATH="/home/kokoax/.rbenv/shims:${PATH}"
-#export RBENV_SHELL=zsh
-#source '/usr/lib/rbenv/libexec/../completions/rbenv.zsh'
-#command rbenv rehash 2>/dev/null
-#rbenv() {
-#  local command
-#  command="$1"
-#  if [ "$#" -gt 0 ]; then
-#    shift
-#  fi
-#
-#  case "$command" in
-#  rehash|shell)
-#    eval "$(rbenv "sh-$command" "$@")";;
-#  *)
-  #    command rbenv "$command" "$@";;
-  #  esac
-  #}
+# pyenvの設定
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
 
+[ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
+[ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
+[ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
+[ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
 

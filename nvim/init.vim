@@ -1,8 +1,6 @@
 if filereadable( expand( '$HOME/.config/nvim/.vimrc.options' ) )
   source $HOME/.config/nvim/.vimrc.options
 endif
-
-
 if filereadable( expand( '$HOME/.config/nvim/.vimrc.keybind' ) )
   source $HOME/.config/nvim/.vimrc.keybind
 endif
