@@ -409,3 +409,5 @@ def_key "k"
 def_key "j"
   scroll_down
 
+def_key "f1"
+  show_help

@@ -163,6 +163,10 @@ hook_add = '''
               \ }
 '''
 
+# Crystal's plugins
+[[plugins]]
+repo = 'rhysd/vim-crystal'
+
 # Color Scheme
 [[plugins]]
 repo = 'tomasr/molokai'

@@ -102,6 +102,9 @@ export PATH=$HOME/.roswell/bin:$PATH
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
 eval "$(goenv init -)"
+export GOPATH=$HOME/repos/github/go
+export PATH=$GOPATH/bin:$PATH
+export gowork=$GOPATH/src/github.com/kokoax
 
 #[ -f ~/repo/zsh-tab-completion/zsh-tab-completion ]   && source ~/repo/zsh-tab-completion/zsh-tab-completion
 
@@ -114,6 +117,15 @@ eval "$(goenv init -)"
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
+
+# anyenv
+if [ -d $HOME/.anyenv ] ; then
+  export PATH="$HOME/.anyenv/bin:$PATH"
+  eval "$(anyenv init -)"
+fi
+
+# roswell settings
+export PAHT=$HOME/.roswell/bin:$PATH
 
 [ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
 [ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color

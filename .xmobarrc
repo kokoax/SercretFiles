@@ -1,8 +1,8 @@
-Config { font = "xft:Ricty:size=11"
+Config { font = "xft:Ricty:size=8"
            , bgColor = "black"
            , fgColor = "grey"
            -- , position = TopW L 100
-           , position = TopSize C 100 12
+           , position = TopSize C 100 6
            , lowerOnStart = False
            , border = NoBorder
            , borderColor = "#26a69a"
