@@ -3,16 +3,16 @@ case ${OSTYPE} in
   darwin*)
     case ${UID} in
       0)
-        PROMPT="%{[38;5;196m%}%m%{[38;5;141m%}$%{[38;5;024m%}%/#%{[38;5;255m%} "
+        PROMPT="%{[38;5;82m%}[ %{[38;5;243m%}%T %{[38;5;034m%}%n %{[38;5;109m%}%/ %{[38;5;82m%}] "
         PROMPT2="%B%{[31m%}%/#%{[m%}%b "
         SPROMPT="%{[31m%}%r is correct? [nyae]:%{[m%} "
         [ -n "${REMOTHEHOST}${SSH_CONNECTION}" ] &&
           PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
         ;;
       *)
-        PROMPT="%{[38;5;081m%}%n%{[38;5;135m%}@%{[38;5;100m%}%/%%%{[38;5;255m%} "
-        PROMPT2="%{[31m%}%_%%%{[m%} "
-        SPROMPT="%{[31m%}%r is correct? [nyae]:%{[m%} "
+        PROMPT="%{[38;5;82m%}[ %{[38;5;243m%}%T %{[38;5;034m%}%n %{[38;5;109m%}%/ %{[38;5;82m%}] "
+        PROMPT2="%B%{[31m%}%/#%{[m%}%b "
+        SPROMPT="%{[38;5;243m%}Correcting? : [%R ] to [%r ] [ n|y|a|e ]:%{[m%}%b "
         [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
           PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
         ;;

@@ -124,6 +124,10 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init -)"
 fi
 
+# kiex(elixirのversion manager)の設定
+# export PATH=~/.kiex/bin:$PATH
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
+
 # roswell settings
 export PAHT=$HOME/.roswell/bin:$PATH
 

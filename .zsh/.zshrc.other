@@ -71,7 +71,8 @@ case ${OSTYPE} in
     alias cls="clear;ls"
     alias vim="nvim"
     alias emacs="emacs -nw"
-    alias chack="check_mail"
+    alias check="check_mail"
+    alias irb="pry"
     ;;
 esac
 

@@ -167,6 +167,13 @@ hook_add = '''
 [[plugins]]
 repo = 'rhysd/vim-crystal'
 
+# Lisp's plugins
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+  let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+'''
+
 # Color Scheme
 [[plugins]]
 repo = 'tomasr/molokai'
