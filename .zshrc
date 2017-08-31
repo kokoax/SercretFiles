@@ -9,7 +9,7 @@ transset-df 0.8 -p 1> /dev/null
 LANG=ja_JP.UTF-8
 
 # neovim のinit.vimのフォルダを探すのに利用
-export XDG_CONFIG_HOME=$HOME/.config
+# export XDG_CONFIG_HOME=$HOME/.config
 
 #ターミナル入力キーバインドをvi風にする
 bindkey -v
@@ -135,4 +135,6 @@ export PAHT=$HOME/.roswell/bin:$PATH
 [ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
 [ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
 [ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
+
+[ -f ~/.zshrc.game ] && source ~/.zshrc.game
 
