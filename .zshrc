@@ -9,7 +9,7 @@ transset-df 0.8 -p 1> /dev/null
 LANG=ja_JP.UTF-8
 
 # neovim のinit.vimのフォルダを探すのに利用
-# export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CONFIG_HOME=$HOME/.config
 
 #ターミナル入力キーバインドをvi風にする
 bindkey -v
