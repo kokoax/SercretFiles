@@ -1,0 +1,33 @@
+#!/bin/bash
+
+#  ########  ##     #   #####    ########     ##     ##        ##
+#     ##     ###    #  ##   ##      ##      ##  ##   ##        ##
+#     ##     # ##   #   ##   ##     ##     ##    ##  ##        ##
+#     ##     #  ##  #     ##        ##     ##    ##  ##        ##
+#     ##     #   ## #       ##      ##     ########  ##        ##
+#     ##     #    ###  ###   ##     ##     ##    ##  ##        ##
+#  ########  #     ##    #####      ##     ##    ##  ########  ########
+
+[[ -z $DOTFILES ]] && DOTFILES=$HOME/SecretFiles
+for f in .??*
+do
+  [[ "$f" == ".git" ]] && continue
+  [[ "$f" == ".gitignore" ]] && continue
+
+  ln -fdsv $DOTFILES/$f $HOME/$f
+
+  echo $f
+done
+
+[[ -z $XDG_CONFIG_HOME ]]   && XDG_CONDIG_HOME=$HOME/.config
+[[ ! -d $XDG_CONFIG_HOME ]] && mkdir -p $XDG_CONFIG_HOME
+for f in *
+do
+  [[ "$f" == "README.md" ]] && continue
+  [[ "$f" == "install.sh" ]] && continue
+
+  ln -fdsv $DOTFILES/nvim $XDG_CONFIG_HOME/nvim
+
+  echo $f
+done
+
