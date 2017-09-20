@@ -73,6 +73,11 @@ case ${OSTYPE} in
     alias emacs="emacs -nw"
     alias check="check_mail"
     alias irb="pry"
+
+    alias ww="worken"
+    alias wre="worken --repo_all"
+    alias wl="worken --list"
+    alias wd='cd `worken --path`'
     ;;
 esac
 

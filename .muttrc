@@ -1,0 +1,83 @@
+# メールボックスのタイプを指定
+set mbox_type = Maildir
+set folder    = ~/Maildir
+# メールデータがあるディレクトリ
+set spoolfile = ~/Maildir
+
+# --- encoding
+# set file_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
+set assumed_charset="iso-2022-jp:euc-jp:shift_jis:utf-8"
+set charset="utf-8"
+set send_charset="us-ascii:iso-2022-jp"
+# set sanitize_ja_chars=yes
+set thorough_search=yes
+set rfc2047_parameters=yes
+set forward_decode=yes
+set mime_forward_decode=no
+set edit_headers=yes
+
+# --- pager
+set pager_context=1
+set pager_index_lines=10
+set menu_scroll
+set pgp_verify_sig=no
+#set status_on_top
+#set status_format=" %r %b %f %n      Del %d      Msgs %m %l %> (%P)"
+#set pager_format="%-10.10i %[!%a %b %d %R]"
+#set date_format="!%H:%M %a %d %b     "
+set index_format="%2C %Z %[%m/%d %H:%m] %-15.15F %s"
+set folder_format="%2C%t%N %-20f %d %4s"
+set sort=threads
+set tilde=yes
+set allow_8bit=no
+
+ignore *
+unignore From: To Cc Date Reply-To Subject
+hdr_order Date From To Cc Reply-To Subject
+
+# --- editor
+set editor="vim %s"
+#set in_reply_to="%i"
+set quote_regexp="^(\[[A-Za-z0-9_.: \-]*\][ ]*)"
+set forw_format="FWD:[%s]"
+
+# --- hook
+#send-hook . 'set signature="~/.signature"'
+#send-hook . 'set attribution="%d において\n%n さん曰く:\n"'
+#send-hook \.jp$     'set signature="~/.signature"'
+#send-hook \.jp$     'set attribution="%d において\n%n さん曰く:\n"'
+#send-hook \.(com|de|se|mx|ro|edu|net)$     'set signature="~/.signature"'
+#send-hook \.(com|de|se|mx|ro|edu|net)$     'set attribution="On %d,\n%f wrote:\n"'
+
+#folder-hook . 'unlists *'
+#folder-hook . 'set sort=threads'
+#folder-hook outbox 'set sort=date-sent'
+#folder-hook <!> 'lists aaa bbb'
+#folder-hook aaa 'lists aaa bbb'
+
+# --- macro
+# macro index G "!/usr/bin/fetchmail\n"
+# macro pager \cb 'urlview' 'Follow links with urlview'
+macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+
+
+# --- aliases
+#source ~/.aliases
+
+# --- general
+set nomove
+set mailcap_path="$HOME/.mailcap:/etc/mailcap"
+auto_view text/enriched text/html
+set abort_nosubject=no
+set metoo
+set noabort_unmodified
+set mark_old=no
+
+# --- color
+color normal white default
+color hdrdefault cyan default
+color header yellow default "^(Subject|From|Date):"
+color body magenta default [_a-z\.A-Z0-9-]+@[a-zA-Z0-9\./\-]+
+color body magenta default (http|ftp)://[_a-zA-Z0-9\./~\-]+
+

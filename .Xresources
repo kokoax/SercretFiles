@@ -8,9 +8,29 @@ Xft.antialias                : 1
 Xft.dpi                      : 100
 Xft.rgba                     : rgb
 
-Xcursor.theme                : Vanilla-DMZ-AA
+! Xcursor.theme                : Vanilla-DMZ-AA
 
-*.font                       : -*-tamzen-medium-*-*-*-14-*-*-*-*-*-*-*
+
+! URxvt.font:              x:9x15, xft:Ricty:size=12:antialiase=true
+! URxvt.boldFont:          xft:Ricty:bold:size=12:antialiase=true
+! URxvt.italicFont:        xft:Ricty:italic:size=12:antialiase=true
+! URxvt.bolditalicFont:    xft:Ricty:bold:italic:size=12:antialiase=true
+
+! *.font                       : -*-tamzen-medium-*-*-*-14-*-*-*-*-*-*-*
+
+xterm*faceName: Ricty:size=10:antialias=true
+! xterm*faceName: Mono :size=10:antialias=true
+xterm*font: 7x13
+XTerm*utf8              : 1
+XTerm*locale            : true
+XTerm*selectToClipboard : true
+XTerm*faceSize          : 13
+XTerm*cjkWidth          : true
+XTerm*background        : black
+XTerm*foreground        : white
+XTerm*saveLines         : 2000
+XTerm*geometry          : 100x30+300+100
+
 URxvt.font                   : xft:Tamzen:size=11
 URxvt.scrollBar              : false
 URxvt.buffered               : true
@@ -26,4 +46,10 @@ URxvt.perl-ext               : default,url-select
 URxvt.keysym.C-i             : perl:url-select:select_next
 URxvt.url-select.launcher    : /usr/bin/firefox
 URxvt.url-select.underline   : true
-URxvt.colorUL                : #78A4FF
+
+parent:true
+urxvt.tintColor:white
+urxvt.shading:10rUL                : #78A4FF
+
+URxvt.foreground: green
+
