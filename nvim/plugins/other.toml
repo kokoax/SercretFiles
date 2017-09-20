@@ -1,0 +1,64 @@
+[[plugins]] # Insert of template
+repo = 'mattn/sonictemplate-vim'
+hook_add = '''
+  let g:sonictemplate_vim_template_dir = [
+        \ '~/.vim/template'
+        \]
+'''
+
+[[plugins]] # Program transport plugin
+repo = 'jpalardy/vim-slime'
+
+[[plugins]] # Static syntax checker plugin any language
+repo = 'scrooloose/syntastic'
+# rubyの静的解析の設定(rubocop)
+hook_add = '''
+  let g:synctastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+  let g:synctastic_ruby_checkers = ['rubocop']
+'''
+
+[[plugins]] # end completion
+repo = 'tpope/vim-endwise'
+
+# [[plugins]] # parentheses completion
+# repo = 'kana/vim-smartinput'
+
+# [[plugins]] # parentheses completion
+# repo = 'Townk/vim-autoclose'
+
+# MarkDownプラグイン
+# let g:previm_open_cmd = 'open -a Firefox'
+
+# Markdown plugins
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+[[plugins]] # PrevimOpen
+repo = 'kannokanno/previm'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+'''
+
+[[plugins]] # Tree view plugin
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  nnoremap T :NERDTree<CR>
+'''
+
+[[plugins]] # Indent visualizer plugin
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  let g:indent_guides_enable_on_vim_startup = 1
+'''
+
+[[plugins]] # Harf space visualizer plugin
+repo = 'bronson/vim-trailing-whitespace'
+
+
+[[plugins]] # Emmet
+repo = 'mattn/emmet-vim'
+hook_add = '''
+  let g:user_emmet_leader_key = '<C-y>'
+'''
+

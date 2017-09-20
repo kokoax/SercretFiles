@@ -1,0 +1,27 @@
+# Color Scheme
+[[plugins]]
+repo = 'tomasr/molokai'
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]] # Document reference plugins
+repo = 'thinca/vim-ref'
+[[plugins]]
+repo = 'yuku-t/vim-ref-ri'
+
+[[plugins]] # Touka plugin
+repo = 'miyakogi/seiya.vim'
+hook_add = '''
+  let g:seiya_auto_enable = !has( 'gui_running' )
+'''
+
+[[plugins]] # Status bar to graphical
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+  set laststatus=2 " ステータスラインを常に表示
+  set showmode " 現在のモードを表示
+  set showcmd " 打ったコマンドをステータスラインの下に表示
+  set ruler " ステータスラインの右側にカーソルの現在位置を表示する
+'''

@@ -1,0 +1,64 @@
+# Elixir's plugin
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+# Clojure's plugin
+[[plugins]]
+repo = 'vim-scripts/VimClojure'
+
+# CoffeeScript's plugin
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+# LaTex's plugins
+[[plugins]]
+repo = 'lervag/vimtex'
+hook_add = '''
+  let g:vimtex_latexmk_continuous = 1  " a + preview
+  let g:vimtex_latexmk_background = 1  " なにか
+  let g:vimtex_latexmk_options = '-pdfdvi'
+  let g:vimtex_view_general_viewer = 'evince'
+'''
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+# Haskell's plugins
+[[plugins]]
+repo = 'eagletmt/ghcmod-vim'
+hook_add = '''
+  autocmd BufWritePost *.hs GhcModCheckAsync " It works when saveing
+'''
+[[plugins]]
+repo = 'dag/vim2hs'
+
+# Golang's plugins
+[[plugins]]
+repo = 'fatih/vim-go'
+hook_add = '''
+  autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
+'''
+
+# Rust's plugins
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = '''
+  let g:quickrun_config = get(g:, 'quickrun_config', {})
+  let g:quickrun_config['syntax/rust'] = {
+              \   'command' : 'rustc',
+              \   'cmdopt' : '-Zparse-only',
+              \   'exec' : '%c %o %s:p',
+              \   'outputter' : 'quickfix',
+              \ }
+'''
+
+# Crystal's plugins
+[[plugins]]
+repo = 'rhysd/vim-crystal'
+
+# Lisp's plugins
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+  let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+'''
+

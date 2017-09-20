@@ -9,7 +9,7 @@ endif
 let &runtimepath = s:dein_repo_dir .",". &runtimepath
 " set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 " プラグイン読み込み＆キャッシュ作成
-let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/.vimrc.plugins.toml'
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/*.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#load_toml(s:toml_file)

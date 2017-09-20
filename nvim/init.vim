@@ -1,12 +1,13 @@
-if filereadable( expand( '$HOME/.config/nvim/.vimrc.options' ) )
-  source $HOME/.config/nvim/.vimrc.options
-endif
-if filereadable( expand( '$HOME/.config/nvim/.vimrc.keybind' ) )
-  source $HOME/.config/nvim/.vimrc.keybind
+if filereadable( expand( '$HOME/.config/nvim/options.vim' ) )
+  source $HOME/.config/nvim/options.vim
 endif
 
-if filereadable( expand( '$HOME/.config/nvim/.vimrc.plugins' ) )
-  source $HOME/.config/nvim/.vimrc.plugins
+if filereadable( expand( '$HOME/.config/nvim/keybind.vim' ) )
+  source $HOME/.config/nvim/keybind.vim
+endif
+
+if filereadable( expand( '$HOME/.config/nvim/plugins/basic.vim' ) )
+  source $HOME/.config/nvim/plugins/basic.vim
 endif
 
 set nocompatible
