@@ -23,6 +23,3 @@ syntax on
 
 highlight Normal ctermbg=none
 
-"Python3 support
-let g:python3_host_prog = '/usr/bin/python3'
-

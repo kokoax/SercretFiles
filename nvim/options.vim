@@ -34,6 +34,10 @@ set nocompatible
 
 set guioptions+=a
 
+" tagsファイルの指定
+set tags=./tags,./TAGS,tags,TAGS
+
+
 " 閉じカッコが入力されたら,対応するカッコをハイライトする
 set showmatch
 

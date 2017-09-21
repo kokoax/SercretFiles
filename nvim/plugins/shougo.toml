@@ -5,10 +5,9 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/deoplete.nvim'
 [[plugins]]
 repo = 'Shougo/vimproc'
+build = 'make'
 [[plugins]]
 repo = 'Shougo/neomru.vim'
-[[plugins]]
-repo = 'Shougo/unite.vim'
 [[plugins]]
 repo = 'Shougo/vimshell'
 hook_add = '''
@@ -17,8 +16,8 @@ hook_add = '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
-  call denite#custom#map('insert', '<C-j>', 'move_to_next_line')
-  call denite#custom#map('insert', '<C-k>', 'move_to_prev_line')
+  call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
+  call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
 
   call denite#custom#var('file_rec', 'command',
         \ ['pt', '--follow', '--nocolor', '--nogroup', '--hidden', '-g', ''])
@@ -26,21 +25,10 @@ hook_add = '''
         \ ['pt', '--nogroup', '--nocolor', '--smart-case', '--hidden'])
   call denite#custom#var('grep', 'default_opts', [])
   call denite#custom#var('grep', 'recursive_opts', [])
+  call denite#custom#var('grep', 'separator', ['--'])
+  call denite#custom#option('default', 'direction', 'top')
 
-  "FileList
-  noremap <C-N> :Unite -buffer-name=file file<CR>
-  "最近使ったファイルの一覧
-  noremap <C-Z> :Unite file_mru<CR>
-  " sourcesを「今開いているファイルのディレクトリ」とする
-  noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-  " ウィンドウを分割して開く
-  au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-  au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-  " ウィンドウを縦に分割して開く
-  au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-  au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-  " ESCキーを2回押すと終了する
-  au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
-  au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
+  noremap <C-n> :Denite -buffer-name=file file<CR>
+  noremap <C-p> :Denite file_rec<CR>
 '''
 
