@@ -26,7 +26,7 @@ do
   [[ "$f" == "README.md" ]] && continue
   [[ "$f" == "install.sh" ]] && continue
 
-  ln -fdsv $DOTFILES/nvim $XDG_CONFIG_HOME/nvim
+  ln -fdsv $DOTFILES/$f $XDG_CONFIG_HOME/$f
 
   echo $f
 done
