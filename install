@@ -14,7 +14,7 @@ do
   [[ "$f" == ".git" ]] && continue
   [[ "$f" == ".gitignore" ]] && continue
 
-  ln -fdsv $DOTFILES/$f $HOME/$f
+  [[ -z "$f" ]] && ln -fsv $DOTFILES/$f $HOME/$f
 
   echo $f
 done
@@ -24,9 +24,9 @@ done
 for f in *
 do
   [[ "$f" == "README.md" ]] && continue
-  [[ "$f" == "install.sh" ]] && continue
+  [[ "$f" == "install" ]] && continue
 
-  ln -fdsv $DOTFILES/$f $XDG_CONFIG_HOME/$f
+  [[ -z "$f" ]] && ln -fsv $DOTFILES/$f $XDG_CONFIG_HOME/$f
 
   echo $f
 done
