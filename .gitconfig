@@ -10,6 +10,7 @@
   s = status
   a = add
   c = commit -m
+  ac = commit -am
   l = log --oneline
   p = push
   d = diff
