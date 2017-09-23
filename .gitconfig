@@ -6,3 +6,11 @@
   InsteadOf = https://github.com/
   InsteadOf = git@github.com:
 
+[alias]
+  s = status
+  a = add
+  c = commit -m
+  l = log --oneline
+  p = push
+  d = diff
+

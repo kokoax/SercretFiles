@@ -74,6 +74,8 @@ case ${OSTYPE} in
     alias check="check_mail"
     alias irb="pry"
 
+    alias g="git"
+
     alias ww="worken"
     alias wre="worken --repo_all"
     alias wl="worken --list"
