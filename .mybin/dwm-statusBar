@@ -1,0 +1,116 @@
+#!/bin/ruby
+
+# def main()
+#   loop do
+#     date = getDate()    # getting of date
+#     volume = getVol()   # getting of volume
+#     batt = getBatt()    # getting of battery
+#     cpu = getCPU( "only" )
+#     mem = getMem()
+#     # wifi = getWifi()
+#     wifi = getIsWifi()
+#
+#     output = sprintf( "%s %s %s %s %s %s", cpu, mem, batt, volume, wifi, date )
+#     # output = sprintf( "%s %s %s %s %s", mem, batt, volume, wifi, date )
+#
+#     system( "xsetroot -name " + '"' + output + '"' )
+#     sleep( 0.5 )
+#   end
+# end
+
+def main()
+  date = getDate()    # getting of date
+  volume = getVol()   # getting of volume
+  batt = getBatt()    # getting of battery
+  cpu = getCPU( "only" )
+  mem = getMem()
+  # wifi = getWifi()
+  wifi = getIsWifi()
+
+  output = sprintf( "%s %s %s %s %s %s", cpu, mem, batt, volume, wifi, date )
+  # output = sprintf( "%s %s %s %s %s", mem, batt, volume, wifi, date )
+
+  puts( output )
+  # system( "xsetroot -name " + '"' + output + '"' )
+end
+
+
+def getDate()
+  return Time.now.strftime( "%a %m/%d %Y %H:%M:%S" )
+end
+
+def getVol()
+  return "Vol: " + `amixer sget Master | egrep '\[.*%\]'` \
+    .match( /([0-1]?[0-9]?[0-9])%/ ).to_s()
+end
+
+def getCPU( type )
+  tmp = `mpstat -P ALL`.scan( /([0-1]?[0-9]?[0-9]\.[0-9][0-9])/ ).slice(1..-1).map{|num| num[0]}
+
+  all    = tmp[0].to_s()
+  first  = tmp[10].to_s()
+  second = tmp[20].to_s()
+  third  = tmp[30].to_s()
+  fourth = tmp[40].to_s()
+
+  if( type == "only" )
+    ret = sprintf( "CPU: %s%", all )
+    # All以外とか気が向いたら書く
+  elsif( type == "full" )
+    ret = sprintf( "cpus a:%s 1:%s 2:%s 3:%s 4:%s", all, first, second, third, fourth )
+  end
+
+  return ret
+end
+
+def getMem()
+  tmp = `free`.scan( /([0-9]+)/ )
+  total     = tmp[0][0].to_i()
+  available = tmp[5][0].to_i()
+  used = total - available
+
+  ret = sprintf( "Mem: %s%", ( ( used.to_f() / total  ) * 100 ).to_i() )
+
+  return ret.to_s()
+end
+
+def getBatt()
+  data = `acpi -b`
+  status = data.match( /(Discharging|Charging|Full)/ ).to_s()
+  batt = data.match( /([0-1]?[0-9]?[0-9]%)/ ).to_s()
+  words = sprintf( "Batt: [%s]", batt )
+  if( status == "Discharging" )
+    #color
+  elsif( status == "Charging" )
+    #color
+  elsif( status == "Full" )
+    #color
+  end
+
+  return words
+end
+
+def getWifi()
+  #print( `arp -e | awk {'print ($5)'}`.split() )
+  tmp = `arp -e | awk {'print ($5)'}`.split()[1].to_s()
+  if( tmp == "" )
+    ret = "Unconected"
+  elsif
+    ret = sprintf( "Conected: %s", tmp )
+  end
+  return ret
+end
+
+def getIsWifi()
+  #print( `arp -e | awk {'print ($5)'}`.split() )
+  tmp = `arp -e | awk {'print ($5)'}`.split()[1].to_s()
+  if( tmp == "" )
+    ret = "Unconected"
+  elsif
+    ret = sprintf( "Conected" )
+  end
+  return ret
+end
+
+main()
+

@@ -1,0 +1,134 @@
+#!/bin/ruby
+
+require "optparse"
+
+class Worken
+  @@origin_path = "~/repos/github"
+  @@worken_path = "~/work_space"
+
+  def expand_path(path)
+    `echo #{path}`.gsub(/\R/, "")
+  end
+
+  def initialize
+    @@worken_path = expand_path(@@worken_path)
+    if ENV["MY_WORKEN_PATH"].tainted?
+      @@origin_path = expand_path(ENV["MY_WORKEN_PATH"])
+    else
+      @@origin_path = expand_path(@@origin_path)
+    end
+  end
+
+  def change(lang)
+    if File.exist?("#{@@origin_path}/#{lang}")
+      `rm #{@@worken_path}/*`
+      `ln -s #{@@origin_path}/#{lang} #{@@worken_path}/#{lang}`
+    else
+      %("#{@@origin_path}/#{lang}" don't exist path.)
+    end
+  end
+
+  def current()
+    `ls #{@@worken_path}`
+  end
+
+  def path()
+    "#{@@worken_path}/#{current}"
+  end
+
+  def move()
+    exec("cd #{@@worken_path}")
+    # `cd #{@@worken_path}`
+  end
+
+  def delete(lang, fflg)
+    if fflg == true
+      `rm -rf #{@@origin_path}#{lang}`
+    else
+      `rm #{@@origin_path}/#{lang}`
+    end
+  end
+
+  def create(lang)
+    `mkdir #{@@origin_path}/#{lang}`
+  end
+
+  def list()
+    `ls #{@@origin_path}`
+  end
+
+  def repo_all()
+    list().split(/\R/).map {|lang| repo(lang)}.join
+  end
+
+  def repo(lang)
+    [`ls #{@@origin_path}/#{lang}`].join
+    # ["***#{lang}***", `ls #{@@origin_path}/#{lang}`], "\n"].join
+  end
+
+  def help()
+    """
+    help
+    """
+  end
+
+  def main(args)
+    opts = {}
+    OptionParser.new do |opt|
+      opt.on(
+        '-c=VALUE', '--change=VALUE',
+        'Change worken directory to specific directory.'
+      ){|v| opts[:change] = v}
+      opt.on(
+        '--current',
+        'Show current work directory.'
+      ){|v| opts[:current] = v}
+      opt.on(
+        '--move',
+        'Move current directory to worken directory.'
+      ){|v| opts[:move] = v}
+      opt.on(
+        '--path',
+        'Show worken directory path.'
+      ){|v| opts[:path] = v}
+      opt.on(
+        '--delete=VALUE',
+        'Delete specific directory on work path.'
+      ){|v| opts[:delete] = v}
+      opt.on(
+        '--make=VALUE',
+        'Make specific directory on work path.'
+      ){|v| opts[:create] = v}
+      opt.on(
+        '--list',
+        'Show all direcotry on work path.'
+      ){|v| opts[:list] = v}
+      opt.on(
+        '--repo=VALUE',
+        'Show all repository on specific directory.'
+      ){|v| opts[:repo] = v}
+      opt.on(
+        '--repo_all',
+        'Show all repository of all file.'
+      ){|v| opts[:repo_all] = v}
+
+      opt.parse!(args)
+    end
+    if opts.include?(:change)      then puts change(opts[:change])
+    elsif opts.include?(:current)  then puts current
+    elsif opts.include?(:path)     then puts path
+    elsif opts.include?(:move)     then puts move
+    elsif opts.include?(:delete)   then puts delete(opts[:delete])
+    elsif opts.include?(:create)   then puts create(opts[:create])
+    elsif opts.include?(:list)     then puts list
+    elsif opts.include?(:repo)     then puts repo(opts[:repo])
+    elsif opts.include?(:repo_all) then puts repo_all
+    else puts "Invalid Command"
+    end
+  end
+end
+
+w = Worken.new
+
+w.main(ARGV)
+

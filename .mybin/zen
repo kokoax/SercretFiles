@@ -1,0 +1,6 @@
+#!/bin/ruby
+require("open-uri")
+
+url = "https://api.github.com/zen"
+puts open(url).read
+

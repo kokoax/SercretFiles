@@ -1,0 +1,12 @@
+#!/bin/sh
+mpd
+
+args=$*
+ding_cmd="./ding.py ${args}"
+mpc_cmd='"mpc add net_presents/Amazing\ Ninja\ Show.mp3"'
+
+eval "${ding_cmd} --command ${mpc_cmd}"
+echo "${ding_cmd} --command ${mpc_cmd}"
+
+mpc play `mpc playlist | wc -l`
+

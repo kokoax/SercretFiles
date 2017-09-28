@@ -1,0 +1,17 @@
+#!/bin/ruby
+
+def getNewMailNum()
+  `ls -1 ~/Maildir/new | wc -l`.to_i
+end
+
+def main()
+  mail_num = getNewMailNum
+  if( mail_num == 0 )
+    puts %{You don't have new mails.}
+  else
+    puts %{You have #{mail_num} mails}
+  end
+end
+
+main()
+
