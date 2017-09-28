@@ -56,9 +56,9 @@ case ${OSTYPE} in
     # alias ssh-univ-mpd="ssh pi@192.168.52.251 -p 6022 -i ~/.ssh/university_mpd_rsa"
     alias ssh-univ-mpd="ssh pi@192.168.54.23 -p 6022 -i ~/.ssh/university_mpd_rsa"
 
-    alias ssh-mpd-local="ssh kokoax@192.168.10.128 -p 6022 -i ~/.ssh/mpdServer_rsa"
+    alias ssh-mpd-local="ssh kokoax@192.168.11.128 -p 6022 -i ~/.ssh/mpdServer_rsa"
     alias ssh-mpd="ssh kokoax@jyoshitune.dip.jp -p 6022 -i ~/.ssh/mpdServer_rsa"
-    alias ssh-pi-local="ssh pi@192.168.10.127 -p 6021 -i ~/.ssh/MpdWoLServer_rsa"
+    alias ssh-pi-local="ssh pi@192.168.11.127 -p 6021 -i ~/.ssh/MpdWoLServer_rsa"
     alias ssh-pi="ssh pi@jyoshitune.dip.jp -p 6021 -i ~/.ssh/MpdWoLServer_rsa"
 
     alias ncmpcpp-local="ncmpcpp -h localhost"
