@@ -19,12 +19,9 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
 
-#GO言語のリポジトリの位置
-export GOPATH=$HOME/go/third-party:$HOME/go/my-project
-export PATH=$HOME/go/third-party/bin:$HOME/go/my-project/bin:$PATH # binをPATHに追加するのも忘れずに
-
 # home binファイル をエクスポート
-export PATH=$HOME/.bin:$PATH # binをPATHに追加するのも忘れずに
+export PATH=$HOME/.bin:$PATH # 他の方の実行ファイル
+export PATH=$HOME/.mybin:$PATH # 自分の実行ファイル
 # local binファイル をエクスポート
 export PATH=$HOME/.local/bin:$PATH # binをPATHに追加するのも忘れずに
 
@@ -102,7 +99,7 @@ export PATH=$HOME/.roswell/bin:$PATH
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
 eval "$(goenv init -)"
-export GOPATH=$HOME/repos/github/go
+export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 export gowork=$GOPATH/src/github.com/kokoax
 
