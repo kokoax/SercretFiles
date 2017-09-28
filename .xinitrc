@@ -13,7 +13,7 @@ xset dpms 0 0 0   #DPMSの機能をそれぞれoff
 # xrdb $HOME/.Xresources
 # xterm &
 dbus-launch gnome-terminal
-ruby /home/kokoax/.bin/dwm-statusbar &
+ruby /home/kokoax/.mybin/dwm-statusbar &
 fcitx &
 
 feh --bg-scale ~/wallpaper/$(( (RANDOM%`ls -1 $HOME/wallpaper | wc -l`) + 1 )).*
