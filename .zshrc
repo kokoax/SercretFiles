@@ -134,7 +134,6 @@ export PAHT=$HOME/.roswell/bin:$PATH
 [ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
 [ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
 [ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
-[ -f ~/.zsh/.git-completion.bash ] && source ~/.zsh/.git-completion.bash
 
 [ -f ~/.zshrc.game ] && source ~/.zshrc.game
 
