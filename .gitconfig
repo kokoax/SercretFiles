@@ -23,3 +23,5 @@
   root = "!exec $SHELL ; :"
   unget = "!ghq-unget $1"
 
+[core]
+	editor = vim
