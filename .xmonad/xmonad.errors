@@ -1,14 +1,28 @@
 
-xmonad.hs:40:1: warning: [-Wdeprecations]
-    Module ‘XMonad.Hooks.ICCCMFocus’ is deprecated:
-      XMonad.Hooks.ICCCMFocus: xmonad>0.10 core merged issue 177
+xmonad.hs:62:34: error:
+    • Ambiguous type variable ‘m0’ arising from a use of ‘spawn’
+      prevents the constraint ‘(MonadIO m0)’ from being solved.
+      Relevant bindings include
+        myHardware :: M.Map (Integer, Integer) (m0 ())
+          (bound at xmonad.hs:60:1)
+      Probable fix: use a type annotation to specify what ‘m0’ should be.
+      These potential instances exist:
+        instance [safe] MonadIO IO -- Defined in ‘Control.Monad.IO.Class’
+        instance MonadIO Query -- Defined in ‘XMonad.Core’
+        instance MonadIO X -- Defined in ‘XMonad.Core’
+        ...plus one instance involving out-of-scope types
+        (use -fprint-potential-instances to see them all)
+    • In the expression: spawn "amixer set Master 5%-"
+      In the expression: ((0, 0x1008FF11), spawn "amixer set Master 5%-")
+      In the second argument of ‘($)’, namely
+        ‘[((0, 0x1008FF11), spawn "amixer set Master 5%-"),
+          ((0, 0x1008FF13), spawn "amixer set Master 5%+"),
+          ((0, 0x1008FF12), spawn "amixer set Master toggle")]’
+   |
+62 |       ((        0, 0x1008FF11 ), spawn "amixer set Master 5%-" )
+   |                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-xmonad.hs:114:12: warning: [-Wdeprecations]
-    In the use of ‘defaultConfig’
-    (imported from XMonad, but defined in XMonad.Config):
-    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
-
-xmonad.hs:119:45: warning: [-Wdeprecations]
-    In the use of ‘defaultConfig’
-    (imported from XMonad, but defined in XMonad.Config):
-    Deprecated: "Use def (from Data.Default, and re-exported by XMonad and XMonad.Config) instead."
+xmonad.hs:120:30: error: Variable not in scope: xmproc :: Handle
+    |
+120 |       { ppOutput = hPutStrLn xmproc
+    |                              ^^^^^^

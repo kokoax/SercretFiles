@@ -37,7 +37,7 @@ import XMonad.Util.EZConfig( additionalKeys )
 -- import XMonad.Actions.UpdatePointer
 -- import System.Exit
 
-import qualified XMonad.Hooks.ICCCMFocus as ICCCMFocus
+-- import qualified XMonad.Hooks.ICCCMFocus as ICCCMFocus
 
 modm = mod4Mask
 
