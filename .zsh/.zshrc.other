@@ -31,7 +31,7 @@ case ${OSTYPE} in
 
     alias less="less -R"
 
-    alias history-all="history -E 1"
+    alias history-all="history 1"
     alias vim="nvim"
     ;;
   linux*)
@@ -48,7 +48,7 @@ case ${OSTYPE} in
 
     alias less="less -R"
 
-    alias history-all="history -E 1"
+    alias history-all="history 1"
     alias spd="spdmeter -rx wlp1s0 -tx wlp1s0"
 
     alias ether-wake-mpd="ether-wake 94:de:80:07:cc:13"
@@ -80,6 +80,8 @@ case ${OSTYPE} in
     alias wre="worken --repo_all"
     alias wl="worken --list"
     alias wd='cd `worken --path`'
+
+    alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
     ;;
 esac
 
