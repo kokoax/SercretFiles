@@ -2,8 +2,8 @@
 xset s off        #BlankTimeをoff
 xset dpms 0 0 0   #DPMSの機能をそれぞれoff
 
-# コンソール透過
-transset-df 0.8 -p 1> /dev/null
+# コンソール透過 # alacrittyなら本体についてる
+# transset-df 0.8 -p 1> /dev/null
 
 # Created by newuser for 5.0.2
 LANG=ja_JP.UTF-8
