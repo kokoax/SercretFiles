@@ -1,3 +1,6 @@
+# Slime's plugin
+[[plugins]]
+repo = 'slime-lang/vim-slime-syntax.git'
 # Elixir's plugin
 [[plugins]]
 repo = 'elixir-lang/vim-elixir'
