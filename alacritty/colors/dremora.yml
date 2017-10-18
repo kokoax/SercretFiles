@@ -1,0 +1,57 @@
+! Dremora 2.0
+*.background: #111111
+*.foreground: #F2F1F0
+!*.cursorColor: #E15441
+!black
+*color0: #222222
+*color1: #d65050
+*color2: #B7CE42
+*color3: #E36E5E
+*color4: #A4D3DD
+*color5: #C36A8C
+*color6: #98abaf
+*color7: #F2F1F0
+
+*color8:  #666666
+*color9:  #ea6060
+*color10: #BDE077
+*color11: #E36352
+*color12: #8FCAD7
+*color13: #E17689
+*color14: #7a92a2
+*color15: #F2F1F0
+
+# Colors (Tomorrow Night Bright)
+colors:
+  # Default colors
+  primary:
+    background: '0x111111'
+    foreground: '0xF2F1F0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text:   '0x000000'
+    cursor: '0xE15441'
+
+  # Normal colors
+  normal:
+    black:   '0x222222'
+    red:     '0xd65050'
+    green:   '0xB7CE42'
+    yellow:  '0xE36E5E'
+    blue:    '0xA4D3DD'
+    magenta: '0xC36A8C'
+    cyan:    '0x98abaf'
+    white:   '0xF2F1F0'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xea6060'
+    green:   '0xBDE077'
+    yellow:  '0xE36352'
+    blue:    '0x8FCAD7'
+    magenta: '0xE17689'
+    cyan:    '0x7a92a2'
+    white:   '0xF2F1F0'
+

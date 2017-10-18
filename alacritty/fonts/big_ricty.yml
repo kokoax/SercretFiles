@@ -1,0 +1,23 @@
+font:
+  normal:
+    family: Ricty # should be "Menlo" or something on macOS.
+
+  bold:
+    family: Ricty # should be "Menlo" or something on macOS.
+
+  italic:
+    family: Ricty
+
+  size: 11.5
+
+  offset:
+    x: -8.0
+    y: 0.0
+
+  glyph_offset:
+    x: -1.0
+    y: 0.0
+
+  use_thin_strokes: true
+
+
