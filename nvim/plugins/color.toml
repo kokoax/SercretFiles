@@ -24,4 +24,14 @@ hook_add = '''
   set showmode " 現在のモードを表示
   set showcmd " 打ったコマンドをステータスラインの下に表示
   set ruler " ステータスラインの右側にカーソルの現在位置を表示する
+  let g:lightline = {
+    \ 'colorscheme': 'powerline',
+    \ 'component_function': {
+    \   'filename': 'LightlineFilename',
+    \ },
+    \ }
+  function! LightlineFilename()
+    return expand("%:p")
+  endfunction|
 '''
+
