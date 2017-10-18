@@ -1,0 +1,12 @@
+alias vim="vim -u $HOME/.vim/vimrc"
+alias l="ls -G"
+alias ls="ls -G"
+alias ll="ls -lG"
+alias la="ls -AG"
+alias lla="ls -AlG"
+
+alias less="less -R"
+
+alias history-all="history 1"
+alias vim="nvim"
+

@@ -1,6 +1,0 @@
-#bindkey
-bindkey -M viins '^L' vi-cmd-mode
-
-#alias
-alias ls="ls --color=auto"
-

@@ -1,0 +1,11 @@
+alias elona+="wine /home/kokoax/Game/elonaplus1.36R/elona.exe"
+alias elona="wine /home/kokoax/Game/elona/elona.exe"
+
+case ${OSTYPE} in
+  darwin*)
+    [ -f ~/.zsh/zsh.alias.darwin ]         && source ~/.zsh/zsh.alias.darwin
+    ;;
+  linux*)
+    [ -f ~/.zsh/zsh.alias.linux ]         && source ~/.zsh/zsh.alias.linux
+    ;;
+esac

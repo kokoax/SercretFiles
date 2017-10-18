@@ -128,9 +128,10 @@ fi
 # roswell settings
 export PAHT=$HOME/.roswell/bin:$PATH
 
-[ -f ~/.zsh/.zshrc.other ]         && source ~/.zsh/.zshrc.other
-[ -f ~/.zsh/.zshrc.color ]         && source ~/.zsh/.zshrc.color
-[ -f ~/.zsh/.incr-*.zsh ]          && source ~/.zsh/.incr-*.zsh
+[ -f ~/.zsh/zsh.alias ]         && source ~/.zsh/zsh.alias
+[ -f ~/.zsh/zsh.keybind ]         && source ~/.zsh/zsh.keybind
+[ -f ~/.zsh/zsh.color ]         && source ~/.zsh/zsh.color
+[ -f ~/.zsh/incr-*.zsh ]          && source ~/.zsh/incr-*.zsh
 
 [ -f ~/.zshrc.game ] && source ~/.zshrc.game
 
