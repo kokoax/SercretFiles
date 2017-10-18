@@ -11,7 +11,7 @@ alias pomo="ding in 30m -n -c 'ffplay -nodisp -autoexit ~/.ding_music/play.* &' 
 
 alias less="less -R"
 
-alias history-all="history 1"
+alias h="history-with-peco"
 alias spd="spdmeter -rx wlp1s0 -tx wlp1s0"
 
 alias ether-wake-mpd="ether-wake 94:de:80:07:cc:13"

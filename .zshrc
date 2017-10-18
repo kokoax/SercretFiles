@@ -84,7 +84,8 @@ export PATH=$HOME/.roswell/bin:$PATH
 #setopt menu_complete
 
 # コマンドのオプション補完ファイルをfpathに追記
-# export fpath=$fpath:$HOME/.zsh/.lib
+[ -e ~/.zsh/lib     ] && export FPATH=$FPATH:$HOME/.zsh/lib
+[ -e ~/.zsh/scripts ] && export FPATH=$FPATH:$HOME/.zsh/scripts
 
 # タブ補完で表示されるものの設定
 # zstyle ':completion:*' verbose yes
@@ -102,8 +103,6 @@ eval "$(goenv init -)"
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 export gowork=$GOPATH/src/github.com/kokoax
-
-#[ -f ~/repo/zsh-tab-completion/zsh-tab-completion ]   && source ~/repo/zsh-tab-completion/zsh-tab-completion
 
 # rbenv
 [[ -d ~/.rbenv  ]] && \
@@ -128,10 +127,11 @@ fi
 # roswell settings
 export PAHT=$HOME/.roswell/bin:$PATH
 
-[ -f ~/.zsh/zsh.alias ]         && source ~/.zsh/zsh.alias
-[ -f ~/.zsh/zsh.keybind ]         && source ~/.zsh/zsh.keybind
-[ -f ~/.zsh/zsh.color ]         && source ~/.zsh/zsh.color
-[ -f ~/.zsh/incr-*.zsh ]          && source ~/.zsh/incr-*.zsh
+[ -f ~/.zsh/zsh.alias ]   && source ~/.zsh/zsh.alias
+[ -f ~/.zsh/zsh.keybind ] && source ~/.zsh/zsh.keybind
+[ -f ~/.zsh/zsh.color ]   && source ~/.zsh/zsh.color
+[ -f ~/.zsh/zsh.scripts ] && source ~/.zsh/zsh.scripts
+[ -f ~/.zsh/incr-*.zsh ]  && source ~/.zsh/incr-*.zsh
 
 [ -f ~/.zshrc.game ] && source ~/.zshrc.game
 

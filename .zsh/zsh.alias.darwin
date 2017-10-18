@@ -7,6 +7,6 @@ alias lla="ls -AlG"
 
 alias less="less -R"
 
-alias history-all="history 1"
+h="history-with-peco"
 alias vim="nvim"
 
