@@ -17,11 +17,18 @@
   r = remote
   o = checkout
 
-  cd = "!ghq look `ghq list | peco --query \"$1\" --initial-filter Fuzzy --prompt 'PROJECT'`"
+  # cd = "!ghq look `ghq list | peco --query \"$1\" --initial-filter Fuzzy --prompt 'PROJECT'`"
+  # cd = "!ghq look `ghq list | peco --query \"$1\" --prompt 'PROJECT'`"
   get = !ghq get -p
   list = !ghq list
   root = "!exec $SHELL ; :"
   unget = "!ghq-unget $1"
 
+[fetch]
+    prune = true
+
 [core]
-	editor = vim
+	editor = nvim
+
+[init]
+	templatedir = /home/kokoax/.git_template/
