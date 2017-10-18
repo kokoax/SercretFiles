@@ -1,0 +1,22 @@
+#!/bin/sh
+
+ffmpeg \
+
+ffmpeg \
+  -r 20 \
+  -s 1366x768 \
+  -f x11grab \
+  -i :0.0 \
+  -f alsa \
+  -i default \
+  -acodec libmp3lame \
+  -vcodec libx264 \
+  -b:v 9000k \
+  -b:a 200k \
+  -ar 22050 \
+  -ab 48k \
+  -threads 4 \
+  -vsync 1 \
+  -y \
+  -f flv rtmp://a.rtmp.youtube.com/live2/bryy-bs60-02cf-9m8g
+
