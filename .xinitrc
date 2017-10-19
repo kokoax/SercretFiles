@@ -16,7 +16,7 @@ dbus-launch gnome-terminal
 ruby /home/kokoax/.mybin/dwm-statusbar &
 fcitx &
 
-feh --bg-scale ~/wallpaper/$(( (RANDOM%`ls -1 $HOME/wallpaper | wc -l`) + 1 )).*
+wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper_dir}  | shuf -n 1`
 xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
 
 exec dwm
