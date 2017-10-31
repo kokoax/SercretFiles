@@ -1,26 +1,3 @@
-! Dremora 2.0
-*.background: #111111
-*.foreground: #F2F1F0
-!*.cursorColor: #E15441
-!black
-*color0: #222222
-*color1: #d65050
-*color2: #B7CE42
-*color3: #E36E5E
-*color4: #A4D3DD
-*color5: #C36A8C
-*color6: #98abaf
-*color7: #F2F1F0
-
-*color8:  #666666
-*color9:  #ea6060
-*color10: #BDE077
-*color11: #E36352
-*color12: #8FCAD7
-*color13: #E17689
-*color14: #7a92a2
-*color15: #F2F1F0
-
 # Colors (Tomorrow Night Bright)
 colors:
   # Default colors
