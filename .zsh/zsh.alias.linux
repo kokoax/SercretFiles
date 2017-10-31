@@ -1,8 +1,18 @@
-alias l="ls -p --color"
-alias ls="ls -p --color"
-alias ll="ls -lp --color"
-alias la="ls -Ap --color"
-alias lla="ls -lAp --color"
+if [ `which exa` ]; then
+
+  alias l="ls"
+  alias ls="exa"
+  alias ll="ls -l"
+  alias la="ls -a"
+  alias lt="ls --tree"
+  alias lla="ls -la"
+else
+  alias ls="ls -p --color"
+  alias l="ls"
+  alias ll="ls -l"
+  alias la="ls -A"
+  alias lla="ls -lA"
+fi
 
 alias v="nvim"
 alias sv="sudo nvim"
