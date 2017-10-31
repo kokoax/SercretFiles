@@ -1,0 +1,34 @@
+# Colors (Tomorrow Night Bright)
+colors:
+  # Default colors
+  primary:
+    background: '0x302627'
+    foreground: '0xe2ccb0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text:   '0x000000'
+    cursor: '0xFFFFFF'
+
+  # Normal colors
+  normal:
+    black:   '0x302627'
+    red:     '0x8b7a70'
+    green:   '0x8f837b'
+    yellow:  '0xb7a188'
+    blue:    '0x70808b'
+    magenta: '0x8b7073'
+    cyan:    '0x7a708b'
+    white:   '0xe2ccb0'
+
+  # Bright colors
+  bright:
+    black:   '0x6e6767'
+    red:     '0xa2948c'
+    green:   '0xaba29c'
+    yellow:  '0xc5b39f'
+    blue:    '0x8c99a2'
+    magenta: '0xa28c8f'
+    cyan:    '0x948ca2'
+    white:   '0xe7d6bf'
+

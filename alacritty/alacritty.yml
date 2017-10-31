@@ -24,8 +24,16 @@ render_timer: false
 
 custom_cursor_colors: false
 
-{% include colors/copland.yml %}
+# {% include colors/copland.yml %}
+# {% include colors/dremora.yml %}
+# {% include colors/holo.yml %}
 # {% include colors/blackburn.yml %}
+# {% include colors/multicolor.yml %}
+#  *** favorit ***
+{% include colors/powerarrow-darker.yml %}
+# {% include colors/rainbow.yml %}
+# {% include colors/steamburn.yml %}
+# {% include colors/vertex.yml %}
 
 visual_bell:
   animation: EaseOutExpo
