@@ -77,9 +77,6 @@ setopt SHARE_HISTORY
 autoload bashcompinit
 bashcompinit
 
-# roswell のバイナリへのパス
-export PATH=$HOME/.roswell/bin:$PATH
-
 # 補完を選択できるオプション？
 #setopt menu_complete
 
@@ -99,30 +96,20 @@ export PATH=$HOME/.roswell/bin:$PATH
 # GoEnv
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
-eval "$(goenv init -)"
+# eval "$(goenv init -)"
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 export gowork=$GOPATH/src/github.com/kokoax
 
-# rbenv
-[[ -d ~/.rbenv  ]] && \
-  export PATH=${HOME}/.rbenv/bin:${PATH} && \
-  eval "$(rbenv init -)"
-
-# pyenvの設定
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
+# kiex(elixirのversion manager)の設定
+export PATH=~/.kiex/bin:$PATH
+[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
   eval "$(anyenv init -)"
 fi
-
-# kiex(elixirのversion manager)の設定
-# export PATH=~/.kiex/bin:$PATH
-[[ -s "$HOME/.kiex/scripts/kiex" ]] && source "$HOME/.kiex/scripts/kiex"
 
 # roswell settings
 export PAHT=$HOME/.roswell/bin:$PATH
@@ -134,4 +121,8 @@ export PAHT=$HOME/.roswell/bin:$PATH
 [ -f ~/.zsh/incr-*.zsh ]  && source ~/.zsh/incr-*.zsh
 
 [ -f ~/.zshrc.game ] && source ~/.zshrc.game
+
+if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
+  zcompile ~/.zshrc
+fi
 
