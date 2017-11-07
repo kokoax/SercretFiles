@@ -1,7 +1,7 @@
 if [ `which exa` ]; then
 
   alias l="ls"
-  alias ls="exa"
+  alias ls="exa -F"
   alias ll="ls -l"
   alias la="ls -a"
   alias lt="ls --tree"
