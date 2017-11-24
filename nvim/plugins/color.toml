@@ -32,6 +32,6 @@ hook_add = '''
     \ }
   function! LightlineFilename()
     return expand("%:p")
-  endfunction|
+  endfunction
 '''
 
