@@ -34,6 +34,8 @@ set nocompatible
 
 set guioptions+=a
 
+set nofoldenable
+
 " tagsファイルの指定
 set tags=./tags,./TAGS,tags,TAGS
 

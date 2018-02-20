@@ -31,6 +31,8 @@ nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap sp gT
 
+nnoremap <tab> gt
+
 imap <C-l> <ESC>
 imap <C-j> <ESC>
 imap jj <ESC>
