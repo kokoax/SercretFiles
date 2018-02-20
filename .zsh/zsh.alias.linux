@@ -49,5 +49,10 @@ alias irb="pry"
 alias g="git"
 
 alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
-alias change-wallpaper='wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper_dir}  | shuf -n 1`'
+alias rewall='wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper_dir}  | shuf -n 1`'
+
+function xxrandr() {
+  xrandr $*
+  rewall
+}
 
