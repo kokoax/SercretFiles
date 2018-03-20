@@ -1,0 +1,23 @@
+font:
+  normal:
+    family: "Fira Code" # should be "Menlo" or something on macOS.
+
+  bold:
+    family: "Fira Code" # should be "Menlo" or something on macOS.
+
+  italic:
+    family: "Fira Code"
+
+  size: 6.0
+
+  offset:
+    x: -2.0
+    y: 0.0
+
+  glyph_offset:
+    x: -1.0
+    y: 0.0
+
+  use_thin_strokes: true
+
+

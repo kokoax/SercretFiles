@@ -21,6 +21,7 @@ statnot &
 fcitx &
 # firefox &
 chromium &
+# /home/kokoax/.bin/firefox &
 dropbox start &
 
 amixer set Master 0%

@@ -2,7 +2,7 @@
 mpd
 
 args=$*
-ding_cmd="./ding.py ${args}"
+ding_cmd="~/.bin/ding.py ${args}"
 mpc_cmd='"mpc add net_presents/Amazing\ Ninja\ Show.mp3"'
 
 eval "${ding_cmd} --command ${mpc_cmd}"

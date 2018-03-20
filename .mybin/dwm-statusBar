@@ -54,7 +54,7 @@ def getCPU( type )
   fourth = tmp[40].to_s()
 
   if( type == "only" )
-    ret = sprintf( "CPU: %s%", all )
+    ret = sprintf( "CPU: %s%%", all )
     # All以外とか気が向いたら書く
   elsif( type == "full" )
     ret = sprintf( "cpus a:%s 1:%s 2:%s 3:%s 4:%s", all, first, second, third, fourth )
@@ -69,7 +69,7 @@ def getMem()
   available = tmp[5][0].to_i()
   used = total - available
 
-  ret = sprintf( "Mem: %s%", ( ( used.to_f() / total  ) * 100 ).to_i() )
+  ret = sprintf( "Mem: %s%%", ( ( used.to_f() / total  ) * 100 ).to_i() )
 
   return ret.to_s()
 end

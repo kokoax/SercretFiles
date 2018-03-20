@@ -17,10 +17,11 @@ tabspaces: 2
 
 {% include fonts/ricty.yml %}
 # {% include fonts/big_ricty.yml %}
+# {% include fonts/fira.yml %}
 
 draw_bold_text_with_bright_colors: true
 
-render_timer: false
+# render_timer: true
 
 custom_cursor_colors: false
 
