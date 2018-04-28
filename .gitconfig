@@ -32,3 +32,6 @@
 
 [init]
 	templatedir = /home/kokoax/.git_template/
+
+[ghq]
+   root = /home/kokoax/.ghq/src
