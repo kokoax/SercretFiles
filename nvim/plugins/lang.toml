@@ -1,6 +1,7 @@
 # Slime's plugin
 [[plugins]]
 repo = 'slime-lang/vim-slime-syntax.git'
+
 # Elixir's plugin
 [[plugins]]
 repo = 'elixir-lang/vim-elixir'
@@ -22,10 +23,9 @@ hook_add = '''
   let g:vimtex_latexmk_options = '-pdfdvi'
   let g:vimtex_view_general_viewer = 'evince'
 '''
-[[plugins]]
-repo = 'thinca/vim-quickrun'
 
 # Haskell's plugins
+# sudo stack install ghc-mod
 [[plugins]]
 repo = 'eagletmt/ghcmod-vim'
 hook_add = '''
@@ -44,15 +44,6 @@ hook_add = '''
 # Rust's plugins
 [[plugins]]
 repo = 'rust-lang/rust.vim'
-hook_add = '''
-  let g:quickrun_config = get(g:, 'quickrun_config', {})
-  let g:quickrun_config['syntax/rust'] = {
-              \   'command' : 'rustc',
-              \   'cmdopt' : '-Zparse-only',
-              \   'exec' : '%c %o %s:p',
-              \   'outputter' : 'quickfix',
-              \ }
-'''
 
 # Crystal's plugins
 [[plugins]]
@@ -68,4 +59,15 @@ hook_add = '''
 # Julia's plugins
 [[plugins]]
 repo = 'JuliaEditorSupport/julia-vim'
+
+# Markdown plugins
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+[[plugins]] # PrevimOpen
+repo = 'previm/previm'
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+hook_add = '''
+  autocmd BufRead,BufNewFile *.md set filetype=markdown
+'''
 

@@ -10,7 +10,6 @@ set textwidth=0
 
 set smartindent
 set expandtab
-"autocmd BufNewFile,BufRead *.ws set noexpandtab
 
 set autoindent
 "HTML特有のインデントを切る.
@@ -31,10 +30,10 @@ set shiftwidth=2
 set softtabstop=2
 
 set nocompatible
-
 set guioptions+=a
 
-set nofoldenable
+" set nofoldenable
+set foldmethod=syntax
 
 " tagsファイルの指定
 set tags=./tags,./TAGS,tags,TAGS
@@ -45,15 +44,6 @@ set showmatch
 
 " 選択しいる行をしばらく時間が立つとハイライト
 set cursorline
-
-augroup AutoHTML
-  autocmd!
-  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
-  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
-  autocmd FileType html imap <buffer><expr><tab>
-        \ emmet#isExpandable() ? '\<plug>(emmet-expand-abbr)' :
-        \ '\<tab>'
-augroup END
 
 autocmd BufNewFile, BufRead *.php setf html
 

@@ -6,18 +6,15 @@ repo = 'nanotech/jellybeans.vim'
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 
-[[plugins]] # Document reference plugins
-repo = 'thinca/vim-ref'
+# Transparent plugin
 [[plugins]]
-repo = 'yuku-t/vim-ref-ri'
-
-[[plugins]] # Touka plugin
 repo = 'miyakogi/seiya.vim'
 hook_add = '''
   let g:seiya_auto_enable = !has( 'gui_running' )
 '''
 
-[[plugins]] # Status bar to graphical
+# Status bar to graphical
+[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
   set laststatus=2 " ステータスラインを常に表示

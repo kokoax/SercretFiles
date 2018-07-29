@@ -1,64 +1,46 @@
-[[plugins]] # Insert of template
-repo = 'mattn/sonictemplate-vim'
-hook_add = '''
-  let g:sonictemplate_vim_template_dir = [
-        \ '~/.vim/template'
-        \]
-'''
-
-[[plugins]] # Program transport plugin
-repo = 'jpalardy/vim-slime'
-
-[[plugins]] # Static syntax checker plugin any language
-repo = 'scrooloose/syntastic'
-# rubyの静的解析の設定(rubocop)
-hook_add = '''
-  let g:synctastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-  let g:synctastic_ruby_checkers = ['rubocop']
-'''
-
-[[plugins]] # end completion
+# End completion
+[[plugins]]
 repo = 'tpope/vim-endwise'
 
-# [[plugins]] # parentheses completion
-# repo = 'kana/vim-smartinput'
-
-# [[plugins]] # parentheses completion
-# repo = 'Townk/vim-autoclose'
-
-# MarkDownプラグイン
-# let g:previm_open_cmd = 'open -a Firefox'
-
-# Markdown plugins
+# Tree Filer plugin
 [[plugins]]
-repo = 'plasticboy/vim-markdown'
-[[plugins]] # PrevimOpen
-repo = 'kannokanno/previm'
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-hook_add = '''
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-'''
-
-[[plugins]] # Tree view plugin
 repo = 'scrooloose/nerdtree'
 hook_add = '''
-  nnoremap T :NERDTree<CR>
+  nnoremap <leader>n :NERDTree<CR>
 '''
 
-[[plugins]] # Indent visualizer plugin
+# Indent visualizer plugin
+[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
   let g:indent_guides_enable_on_vim_startup = 1
 '''
 
-[[plugins]] # Harf space visualizer plugin
+# Unnecessary space visualizer plugin
+[[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
-
-[[plugins]] # Emmet
-repo = 'mattn/emmet-vim'
+# Snippet Plugins
+[[plugins]]
+repo = 'SirVer/ultisnips'
 hook_add = '''
-  let g:user_emmet_leader_key = '<C-y>'
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 '''
 
+# Snippet Templates
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+# Static analyzer
+[[plugins]]
+repo = 'w0rp/ale'
+
+# Quick program runner
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+  let g:quickrun_no_default_key_mappings = 1
+  nmap <Leader>r <Plug>(quickrun)
+'''
