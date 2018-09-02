@@ -1,10 +1,11 @@
 " マウス操作の無効化
 set mouse=
+set clipboard=unnamedplus
 
+set fileformats=unix,dos,mac
 set encoding=utf-8
 set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp
 set fileencoding=utf-8
-set number
 
 set textwidth=0
 
@@ -36,8 +37,7 @@ set guioptions+=a
 set foldmethod=syntax
 
 " tagsファイルの指定
-set tags=./tags,./TAGS,tags,TAGS
-
+set tags=./tags,./TAGS,tags,TAGS,.tags
 
 " 閉じカッコが入力されたら,対応するカッコをハイライトする
 set showmatch
@@ -55,4 +55,15 @@ function All_indent()
 endfunction
 " autocmd BufWritePre * :call All_indent()
 
+" リポジトリ下に.vimrc.localを配置すると読み込んでくれるように設定
+augroup vimrc-local
+  autocmd!
+  autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
+augroup END
 
+function! s:vimrc_local(loc)
+  let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
+  for i in reverse(filter(files, 'filereadable(v:val)'))
+    source `=i`
+  endfor
+endfunction

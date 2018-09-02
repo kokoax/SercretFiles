@@ -39,6 +39,7 @@ repo = 'dag/vim2hs'
 repo = 'fatih/vim-go'
 hook_add = '''
   autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
+  autocmd BufNewFile,BufRead *.go nnoremap <leader><leader> :GoTestFunc<CR>
 '''
 
 # Rust's plugins

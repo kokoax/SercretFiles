@@ -2,11 +2,11 @@
 [[plugins]]
 repo = 'tpope/vim-endwise'
 
-# Tree Filer plugin
+# Vaffle File Manager for Vim
 [[plugins]]
-repo = 'scrooloose/nerdtree'
+repo = 'cocopon/vaffle.vim'
 hook_add = '''
-  nnoremap <leader>n :NERDTree<CR>
+  nnoremap <leader>n :Vaffle<CR>
 '''
 
 # Indent visualizer plugin
@@ -44,3 +44,27 @@ hook_add = '''
   let g:quickrun_no_default_key_mappings = 1
   nmap <Leader>r <Plug>(quickrun)
 '''
+
+# for ctags
+[[plugins]]
+repo = 'szw/vim-tags.git'
+hook_add = '''
+  let g:gen_tags#ctags_auto_gen = 1
+'''
+
+# snippet plugin for html
+# [[plugins]]
+# repo = 'mattn/emmet-vim'
+# hook_add = '''
+#   let g:user_emmet_install_global = 0
+#   autocmd FileType html,css EmmetInstall
+# '''
+
+# Prettier
+# [[plugins]]
+# repo = 'prettier/vim-prettier'
+# build = 'npm install'
+# on_ft    = ['javascript', 'typescript', 'vue', 'css', 'scss', 'json', 'markdown']
+# hook_add = '''
+#   autocmd BufWritePre *.js,*.jsx,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
+# '''
