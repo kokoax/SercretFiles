@@ -72,3 +72,6 @@ hook_add = '''
   autocmd BufRead,BufNewFile *.md set filetype=markdown
 '''
 
+# Kotlin's plugins
+[[plugins]]
+repo = 'udalov/kotlin-vim'

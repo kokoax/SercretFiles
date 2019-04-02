@@ -1,13 +1,13 @@
 env:
   TERM: xterm-256color
 
-# dimensions:
-#   columns: 80
-#   lines: 24
+dimensions:
+  columns: 80
+  lines: 24
 
-# padding:
-#   x: 2
-#   y: 2
+padding:
+  x: 2
+  y: 2
 
 dpi:
   x: 192.0
@@ -15,37 +15,7 @@ dpi:
 
 tabspaces: 2
 
-font:
-  normal:
-    family: Ricty # should be "Menlo" or something on macOS.
-    # family: DejaVu Sans Mono # should be "Menlo" or something on macOS.
-    style: Regular
-
-  bold:
-    family: Ricty # should be "Menlo" or something on macOS.
-    # family: DejaVu Sans Mono # should be "Menlo" or something on macOS.
-    style: Bold
-
-  italic:
-    family: DejaVu Sans Mono
-    style: Italic
-
-  size: 8.5
-  # size: 11.0
-  # size: 15.0
-
-  offset:
-    x: 0
-    y: 0
-
-  glyph_offset:
-    x: 0
-    y: 0
-
-  use_thin_strokes: true
-
-
-# {% include fonts/ricty.yml %}
+{% include fonts/ricty.yml %}
 # {% include fonts/big_ricty.yml %}
 # {% include fonts/fira.yml %}
 
@@ -61,44 +31,10 @@ custom_cursor_colors: false
 # {% include colors/blackburn.yml %}
 # {% include colors/multicolor.yml %}
 #  *** favorit ***
-# {% include colors/powerarrow-darker.yml %}
+{% include colors/powerarrow-darker.yml %}
 # {% include colors/rainbow.yml %}
 # {% include colors/steamburn.yml %}
 # {% include colors/vertex.yml %}
-
-# Colors (Tomorrow Night Bright)
-colors:
-  # Default colors
-  primary:
-    background: '0x1A1A1A'
-    foreground: '0xDDDDFF'
-
-  # Colors the cursor will use if `custom_cursor_colors` is true
-  cursor:
-    text:   '0x000000'
-    cursor: '0xEE7600'
-
-  # Normal colors
-  normal:
-    black:   '0x1A1A1A'
-    red:     '0xAF5360'
-    green:   '0x447019'
-    yellow:  '0xD8D782'
-    blue:    '0x648BB5'
-    magenta: '0xE5C8D6'
-    cyan:    '0x406E6F'
-    white:   '0xC6C6E5'
-
-  # Bright colors
-  bright:
-    black:   '0x6E6E6E'
-    red:     '0xEA6F81'
-    green:   '0x7BAB4E'
-    yellow:  '0xCFCD63'
-    blue:    '0x92ADCB'
-    magenta: '0xCB92AD'
-    cyan:    '0x81DCDE'
-    white:   '0xDDDDFF'
 
 visual_bell:
   animation: EaseOutExpo

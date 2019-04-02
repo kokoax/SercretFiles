@@ -2,7 +2,7 @@
 xset s off        #BlankTimeをoff
 xset dpms 0 0 0   #DPMSの機能をそれぞれoff
 
-# コンソール透過 # alacrittyなら本体についてる
+# コンソール透過(カーソルが触ってるwindowを透過するからよくない) # alacrittyなら本体についてる
 # transset-df 0.8 -p 1> /dev/null
 
 # Created by newuser for 5.0.2
@@ -96,9 +96,10 @@ bashcompinit
 # GoEnv
 export GOENV_ROOT=$HOME/.goenv
 export PATH=$GOENV_ROOT/bin:$PATH
-# eval "$(goenv init -)"
+eval "$(goenv init -)"
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
+export GOPATH=$GOPATH:$HOME/.ghq
 export gowork=$GOPATH/src/github.com/kokoax
 
 # kiex(elixirのversion manager)の設定
@@ -111,8 +112,14 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init -)"
 fi
 
+# ruby settings
+export PATH=$(ruby -e 'print Gem.user_dir')/bin:$PATH
+
 # roswell settings
-export PAHT=$HOME/.roswell/bin:$PATH
+export PATH=$HOME/.roswell/bin:$PATH
+
+# rust settings
+export PATH=$HOME/.cargo/bin:$PATH
 
 [ -f ~/.zsh/zsh.alias ]   && source ~/.zsh/zsh.alias
 [ -f ~/.zsh/zsh.keybind ] && source ~/.zsh/zsh.keybind
@@ -126,3 +133,4 @@ if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
 
+alias labssh="ssh kokoax@210.156.43.71 -p 22 -i ~/.ssh/lab_rsa"

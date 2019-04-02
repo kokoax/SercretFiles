@@ -1,0 +1,1 @@
+wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper_dir}  | shuf -n 1`

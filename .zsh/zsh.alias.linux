@@ -48,9 +48,10 @@ alias check="check_mail"
 alias irb="pry"
 alias g="git"
 
-# alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
-alias repos='ghq look `ghq list | fzf --query "$1" --prompt "PROJECT "`'
+alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
+# alias repos='ghq look `ghq list | fzf --query "$1" --prompt "PROJECT "`'
 alias rewall='wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper_dir}  | shuf -n 1`'
+alias cat="cat-nyaa"
 
 function xxrandr() {
   xrandr $*

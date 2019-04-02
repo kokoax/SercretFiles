@@ -1,0 +1,9 @@
+function cat-nyaa() {
+  if [ -z "$1" ]
+    then
+      echo "ᓚᘏᗢ"
+    else
+      \cat $@
+  fi
+}
+

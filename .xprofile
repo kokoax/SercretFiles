@@ -12,17 +12,22 @@ wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper
 xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
 sleep 1
 
+# i3 settings
+export TERMINAL=/home/kokoax/.bin/alacritty
+# exec --no-startup-id i3-msg 'workspace ; exec /usr/bin/chromium'
+~/.conky_startup.sh &
+
 # xrdb $HOME/.Xresources
 # xterm &
 # urxvt &
 # dbus-launch gnome-terminal
 # ruby /home/kokoax/.bin/dwm-statusBar &
-statnot &
+# statnot &
 fcitx &
 # firefox &
-chromium &
+# chromium &
 # /home/kokoax/.bin/firefox &
-dropbox start &
+# dropbox start &
 
 amixer set Master 0%
 

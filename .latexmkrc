@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-$latex         = 'platex -shell-escape -syntax=1 -halt-on-error';
+$latex         = 'platex -shell-escape -syntex=1 -halt-on-error';
 $latex_silent  = $latex . ' -interation=batchmode';
 $bibtex        = 'pbibtex';
 $dvipdf        = 'dvipdfmx %O -o %D %S';

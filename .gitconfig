@@ -2,9 +2,9 @@
 	name = kokoax
 	email = yomo4808@gmail.com
 
-[url "github:"]
-  InsteadOf = https://github.com/
-  InsteadOf = git@github.com:
+# [url "github:"]
+#   InsteadOf = https://github.com/
+#   InsteadOf = git@github.com:
 
 [alias]
   s = status
@@ -16,6 +16,7 @@
   d = diff
   r = remote
   o = checkout
+  f = fetch -p
 
   # cd = "!ghq look `ghq list | peco --query \"$1\" --initial-filter Fuzzy --prompt 'PROJECT'`"
   # cd = "!ghq look `ghq list | peco --query \"$1\" --prompt 'PROJECT'`"
@@ -29,6 +30,7 @@
 
 [core]
 	editor = nvim
+    excludesfile = ~/.gitignore.local
 
 [init]
 	templatedir = /home/kokoax/.git_template/

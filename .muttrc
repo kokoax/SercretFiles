@@ -56,10 +56,10 @@ set forw_format="FWD:[%s]"
 #folder-hook aaa 'lists aaa bbb'
 
 # --- macro
-# macro index G "!/usr/bin/fetchmail\n"
-# macro pager \cb 'urlview' 'Follow links with urlview'
-macro index,pager \cb "<pipe-message> urlscan<Enter>" "call urlscan to extract URLs out of a message"
-macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract URLs out of a message"
+macro index G "!/usr/bin/fetchmail\n"
+macro pager \cb 'urlview' 'Follow links with urlview'
+# macro index,pager \cb "<pipe-message> urlview<Enter>" "call urlview to extract URLs out of a message"
+# macro attach,compose \cb "<pipe-entry> urlview<Enter>" "call urlview to extract URLs out of a message"
 
 
 # --- aliases
@@ -68,7 +68,7 @@ macro attach,compose \cb "<pipe-entry> urlscan<Enter>" "call urlscan to extract 
 # --- general
 set nomove
 set mailcap_path="$HOME/.mailcap:/etc/mailcap"
-auto_view text/enriched text/html
+# auto_view text/enriched text/html
 set abort_nosubject=no
 set metoo
 set noabort_unmodified
