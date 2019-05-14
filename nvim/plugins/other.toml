@@ -52,6 +52,15 @@ hook_add = '''
   let g:gen_tags#ctags_auto_gen = 1
 '''
 
+# for git
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''
+  let g:gitgutter_highlight_lines = 1
+'''
+
 # snippet plugin for html
 # [[plugins]]
 # repo = 'mattn/emmet-vim'
