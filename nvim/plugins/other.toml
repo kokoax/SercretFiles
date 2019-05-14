@@ -3,10 +3,15 @@
 repo = 'tpope/vim-endwise'
 
 # Vaffle File Manager for Vim
+# [[plugins]]
+# repo = 'cocopon/vaffle.vim'
+# hook_add = '''
+#   nnoremap <leader>n :Vaffle<CR>
+# '''
 [[plugins]]
-repo = 'cocopon/vaffle.vim'
+repo = 'scrooloose/nerdtree.git'
 hook_add = '''
-  nnoremap <leader>n :Vaffle<CR>
+  nnoremap <leader>n :NERDTree<CR>
 '''
 
 # Indent visualizer plugin
