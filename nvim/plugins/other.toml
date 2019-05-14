@@ -63,7 +63,7 @@ repo = 'airblade/vim-gitgutter'
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 hook_add = '''
-  let g:gitgutter_highlight_lines = 1
+  " let g:gitgutter_highlight_lines = 1 " 変更があった一行をハイライト
 '''
 
 # snippet plugin for html
