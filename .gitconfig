@@ -1,10 +1,10 @@
-[user]
-	name = kokoax
-	email = yomo4808@gmail.com
+# [user]
+# 	name = kokoax
+# 	email = yomo4808@gmail.com
 
-# [url "github:"]
-#   InsteadOf = https://github.com/
-#   InsteadOf = git@github.com:
+[url "github:"]
+  InsteadOf = https://github.com/
+  InsteadOf = git@github.com:
 
 [alias]
   s = status
@@ -17,6 +17,7 @@
   r = remote
   o = checkout
   f = fetch -p
+  g = "!f(){ nvim `git grep -n $1 | peco | awk -F ':' '{printf \"+%d %s\", $2, $1}'`;};f"
 
   # cd = "!ghq look `ghq list | peco --query \"$1\" --initial-filter Fuzzy --prompt 'PROJECT'`"
   # cd = "!ghq look `ghq list | peco --query \"$1\" --prompt 'PROJECT'`"
