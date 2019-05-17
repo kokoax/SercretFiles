@@ -14,6 +14,17 @@ else
   alias lla="ls -lA"
 fi
 
+function _clear_ls() {
+  clear
+  ls
+  echo
+  zle reset-prompt
+}
+
+zle -N clear_ls _clear_ls
+bindkey '^L' clear_ls
+bindkey '^R' peco-select-history
+
 alias v="nvim"
 alias sv="sudo nvim"
 

@@ -12,7 +12,7 @@ LANG=ja_JP.UTF-8
 export XDG_CONFIG_HOME=$HOME/.config
 
 #ターミナル入力キーバインドをvi風にする
-bindkey -v
+# bindkey -v
 
 #コマンドを10000保存する
 export HISTFILE=~/.zsh_history
