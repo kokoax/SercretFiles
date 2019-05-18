@@ -1,6 +1,6 @@
 #一定時間で画面がOFFにならないようにする
-xset s off        #BlankTimeをoff
-xset dpms 0 0 0   #DPMSの機能をそれぞれoff
+# xset s off        #BlankTimeをoff
+# xset dpms 0 0 0   #DPMSの機能をそれぞれoff
 
 # コンソール透過(カーソルが触ってるwindowを透過するからよくない) # alacrittyなら本体についてる
 # transset-df 0.8 -p 1> /dev/null
