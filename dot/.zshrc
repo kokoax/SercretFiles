@@ -122,10 +122,10 @@ export PATH=$HOME/.cargo/bin:$PATH
 [ -e ~/.zsh/lib ] && export FPATH=$FPATH:$HOME/.zsh/lib
 
 # 分割した.zshファイルを読み込み
+[ -f ~/.zsh/zsh.plugins ]	&& source ~/.zsh/zsh.plugins
 [ -f ~/.zsh/zsh.alias ]		&& source ~/.zsh/zsh.alias
 [ -f ~/.zsh/zsh.keybind ]	&& source ~/.zsh/zsh.keybind
 [ -f ~/.zsh/zsh.color ]		&& source ~/.zsh/zsh.color
-[ -f ~/.zsh/zsh.plugins ]	&& source ~/.zsh/zsh.plugins
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc

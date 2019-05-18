@@ -13,6 +13,7 @@ case ${UID} in
    PROMPT="%{[38;5;82m%}($'-') ᓚᘏᗢ <nyaa [ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;82m%}]
   %{[38;5;117m%}${RIGHT} %{[39m%}"
    PROMPT2="%B%{[31m%}($'-')!%/#%{[m%}%b %{[39m%}"
+   RPROMPT="$(__git_ps1)"
    SPROMPT="%{[38;5;243m%}($'-')?: [ %R ] to [ %r ] [ n|y|a|e ]:%{[m%}%b %{[39m%}"
    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
      PROMPT="%{[37m%}${HOST%%.*} ${PROMPT} %{[39m%}"

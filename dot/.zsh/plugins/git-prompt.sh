@@ -89,6 +89,11 @@
 __git_printf_supports_v=
 printf -v __git_printf_supports_v -- '%s' yes >/dev/null 2>&1
 
+autoload __git_ps1_show_upstream
+autoload __git_ps1_colorize_gitstring
+autoload __git_eread
+autoload __git_ps1
+
 # stores the divergence from upstream in $p
 # used by GIT_PS1_SHOWUPSTREAM
 __git_ps1_show_upstream ()
