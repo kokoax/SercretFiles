@@ -1,4 +1,4 @@
-autoload history-with-peco
+zle -N history-with-peco
 
 function history-with-peco() {
   local BUFFER=`history -n 1 | grep "$1" | peco`
