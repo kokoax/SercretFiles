@@ -37,4 +37,4 @@
 # 	templatedir = $HOME/.git_template/
 
 [ghq]
-   root = $HOME/.ghq/src
+   root = /Users/y-tokoi/.ghq/src
