@@ -1,0 +1,4 @@
+[ -f ~/.zsh/plugins/git-prompt.sh ]			&& source ~/.zsh/plugins/git-prompt.sh
+[ -f ~/.zsh/plugins/incr-0.2.zsh ]			&& source ~/.zsh/plugins/incr-0.2.zsh
+[ -f ~/.zsh/plugins/clear-ls.zsh ]			&& source ~/.zsh/plugins/clear-ls.zsh
+[ -f ~/.zsh/plugins/history-with-peco ]	&& source ~/.zsh/plugins/history-with-peco

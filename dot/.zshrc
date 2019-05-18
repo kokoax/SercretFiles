@@ -80,9 +80,6 @@ bashcompinit
 # 補完を選択できるオプション？
 #setopt menu_complete
 
-# コマンドのオプション補完ファイルをfpathに追記
-[ -e ~/.zsh/lib     ] && export FPATH=$FPATH:$HOME/.zsh/lib
-[ -e ~/.zsh/scripts ] && export FPATH=$FPATH:$HOME/.zsh/scripts
 
 # タブ補完で表示されるものの設定
 # zstyle ':completion:*' verbose yes
@@ -121,16 +118,15 @@ export PATH=$HOME/.roswell/bin:$PATH
 # rust settings
 export PATH=$HOME/.cargo/bin:$PATH
 
-[ -f ~/.zsh/zsh.alias ]   && source ~/.zsh/zsh.alias
-[ -f ~/.zsh/zsh.keybind ] && source ~/.zsh/zsh.keybind
-[ -f ~/.zsh/zsh.color ]   && source ~/.zsh/zsh.color
-[ -f ~/.zsh/zsh.scripts ] && source ~/.zsh/zsh.scripts
-[ -f ~/.zsh/incr-*.zsh ]  && source ~/.zsh/incr-*.zsh
+# コマンドのオプション補完ファイルをfpathに追記
+[ -e ~/.zsh/lib ] && export FPATH=$FPATH:$HOME/.zsh/lib
 
-[ -f ~/.zshrc.game ] && source ~/.zshrc.game
+# 分割した.zshファイルを読み込み
+[ -f ~/.zsh/zsh.alias ]		&& source ~/.zsh/zsh.alias
+[ -f ~/.zsh/zsh.keybind ]	&& source ~/.zsh/zsh.keybind
+[ -f ~/.zsh/zsh.color ]		&& source ~/.zsh/zsh.color
+[ -f ~/.zsh/zsh.plugins ]	&& source ~/.zsh/zsh.plugins
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
-
-alias labssh="ssh kokoax@210.156.43.71 -p 22 -i ~/.ssh/lab_rsa"

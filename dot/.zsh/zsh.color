@@ -1,50 +1,26 @@
 ##ターミナルの表示設定
 RIGHT=$'\U1F449 '
-case ${OSTYPE} in
-  darwin*)
-    case ${UID} in
-      0)
-        PROMPT="%{[38;5;82m%}[ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;82m%}] "
-        PROMPT2="%B%{[31m%}%/#%{[m%}%b "
-        SPROMPT="%{[31m%}%r is correct? [nyae]:%{[m%} "
-        [ -n "${REMOTHEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-        ;;
-      *)
-        PROMPT="(*'-')%{[38;5;82m%}[ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;82m%}] "
-        PROMPT2="%B%{[31m%}%/#%{[m%}%b "
-        SPROMPT="%{[38;5;243m%}Correcting? : [%R ] to [%r ] [ n|y|a|e ]:%{[m%}%b "
-        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{[37m%}${HOST%%.*} ${PROMPT}"
-        ;;
-    esac
-    ;;
-  linux*)
-    case ${UID} in
-      0)
-        PROMPT="%{[38;5;9m%}(#'-') %{[38;5;9m%}[ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;9m%}] %{[39m%}
+case ${UID} in
+  0)
+    PROMPT="%{[38;5;9m%}(#'-') %{[38;5;9m%}[ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;9m%}] %{[39m%}
   %{[38;5;9%}${RIGHT} %{[39m%}"
-        PROMPT2="%B%{[31m%}(#'-')!%/#%{[m%}%b %{[39m%}"
-        SPROMPT="%{[38;5;243m%}(#'-')?: [ %R ] to [ %r ] [ n|y|a|e ]:%{[m%}%b %{[39m%}"
-        [ -n "${REMOTHEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{[37m%}${HOST%%.*} ${PROMPT} %{[39m%}"
-        ;;
-      *)
-        PROMPT="%{[38;5;82m%}($'-') ᓚᘏᗢ <nyaa [ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;82m%}]
-  %{[38;5;117m%}${RIGHT} %{[39m%}"
-        PROMPT2="%B%{[31m%}($'-')!%/#%{[m%}%b %{[39m%}"
-        SPROMPT="%{[38;5;243m%}($'-')?: [ %R ] to [ %r ] [ n|y|a|e ]:%{[m%}%b %{[39m%}"
-        [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
-          PROMPT="%{[37m%}${HOST%%.*} ${PROMPT} %{[39m%}"
-        ;;
-    esac
+    PROMPT2="%B%{[31m%}(#'-')!%/#%{[m%}%b %{[39m%}"
+    SPROMPT="%{[38;5;243m%}(#'-')?: [ %R ] to [ %r ] [ n|y|a|e ]:%{[m%}%b %{[39m%}"
+    [ -n "${REMOTHEHOST}${SSH_CONNECTION}" ] &&
+      PROMPT="%{[37m%}${HOST%%.*} ${PROMPT} %{[39m%}"
     ;;
+  *)
+   PROMPT="%{[38;5;82m%}($'-') ᓚᘏᗢ <nyaa [ %{[38;5;243m%}%T %{[38;5;109m%}%/ %{[38;5;82m%}]
+  %{[38;5;117m%}${RIGHT} %{[39m%}"
+   PROMPT2="%B%{[31m%}($'-')!%/#%{[m%}%b %{[39m%}"
+   SPROMPT="%{[38;5;243m%}($'-')?: [ %R ] to [ %r ] [ n|y|a|e ]:%{[m%}%b %{[39m%}"
+   [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+     PROMPT="%{[37m%}${HOST%%.*} ${PROMPT} %{[39m%}"
+   ;;
 esac
 
 #Terminal ls,補完のファイルの色設定
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-export LSCOLORS=ExFxCxdxBxegedabagacad
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-
-
+# export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# export LSCOLORS=ExFxCxdxBxegedabagacad
+# export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'

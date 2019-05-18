@@ -1,5 +1,6 @@
+autoload history-with-peco
+
 function history-with-peco() {
   local BUFFER=`history -n 1 | grep "$1" | peco`
   eval $BUFFER
 }
-

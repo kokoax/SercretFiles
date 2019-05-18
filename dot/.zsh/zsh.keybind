@@ -1,13 +1,1 @@
-#bindkey
-bindkey -M viins '^L' vi-cmd-mode
-bindkey -M viins '^J' vi-cmd-mode
-bindkey -M viins 'jj' vi-cmd-mode
-
-#C-^ で一つ上のディレクトリへ
-function cdup() {
-  echo
-  cd ..
-  zle reset-prompt
-}
-zle -N cdup
-bindkey '^^' cdup
+bindkey '^L' 'clear-ls'

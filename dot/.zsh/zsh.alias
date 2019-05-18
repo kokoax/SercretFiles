@@ -1,11 +1,30 @@
-alias elona+="wine /home/kokoax/Game/elonaplus1.36R/elona.exe"
-alias elona="wine /home/kokoax/Game/elona/elona.exe"
+if [ `which exa` ]; then
+  alias l="exa"
+  alias ls="exa -F"
+  alias ll="exa -l"
+  alias la="exa -a"
+  alias lt="exa --tree"
+  alias lla="exa -la"
+else
+  alias ls="ls -p --color"
+  alias l="ls"
+  alias ll="ls -l"
+  alias la="ls -A"
+  alias lla="ls -lA"
+fi
 
-case ${OSTYPE} in
-  darwin*)
-    [ -f ~/.zsh/zsh.alias.darwin ]         && source ~/.zsh/zsh.alias.darwin
-    ;;
-  linux*)
-    [ -f ~/.zsh/zsh.alias.linux ]         && source ~/.zsh/zsh.alias.linux
-    ;;
-esac
+alias v="nvim"
+alias sv="sudo nvim"
+
+alias pomo="ding in 30m -n -c 'ffplay -nodisp -autoexit ~/.ding_music/play.* &' &"
+
+alias less="less -R"
+
+alias h="history-with-peco"
+
+alias vim="nvim"
+
+alias irb="pry"
+alias g="git"
+
+alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
