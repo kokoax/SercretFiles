@@ -10,21 +10,21 @@
   s = status
   a = add
   c = commit
-  ac = commit -a
   l = log --oneline
   p = push
   d = diff
   r = remote
   o = checkout
   f = fetch -p
+  # rb = "!f() { git branch --merged | grep -v \* | xargs git branch -d ; }; vim `f`"
   g = "!f(){ nvim `git grep -n $1 | peco | awk -F ':' '{printf \"+%d %s\", $2, $1}'`;};f"
-
-  # cd = "!ghq look `ghq list | peco --query \"$1\" --initial-filter Fuzzy --prompt 'PROJECT'`"
-  # cd = "!ghq look `ghq list | peco --query \"$1\" --prompt 'PROJECT'`"
+	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
+  ls = ls-files
   get = !ghq get -p
   list = !ghq list
   root = "!exec $SHELL ; :"
   unget = "!ghq-unget $1"
+	showpr = "!f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
 
 [fetch]
     prune = true

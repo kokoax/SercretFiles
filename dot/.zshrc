@@ -1,3 +1,7 @@
+alias mm='v ~/memos/work/memo.md'
+alias mg='cd /Users/y-tokoi/repos/my_favorit_memos; ruby main.rb --title'
+alias ms='cd /Users/y-tokoi/repos/my_favorit_memos; ruby main.rb --title | peco | awk -F ":" "{print $1}" | xargs -I{} ruby main.rb --extract {}'
+
 #一定時間で画面がOFFにならないようにする
 # xset s off        #BlankTimeをoff
 # xset dpms 0 0 0   #DPMSの機能をそれぞれoff
@@ -92,11 +96,12 @@ bashcompinit
 
 # GoEnv
 export GOENV_ROOT=$HOME/.goenv
+export GOENV_DISABLE_GOPATH=1
 export PATH=$GOENV_ROOT/bin:$PATH
 eval "$(goenv init -)"
 export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
 export GOPATH=$GOPATH:$HOME/.ghq
+export PATH=$GOPATH/bin:$PATH
 export gowork=$GOPATH/src/github.com/kokoax
 
 # kiex(elixirのversion manager)の設定

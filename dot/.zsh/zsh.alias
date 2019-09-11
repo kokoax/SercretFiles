@@ -28,3 +28,5 @@ alias irb="pry"
 alias g="git"
 
 alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
+
+alias ctags='/usr/local/bin/ctags'
