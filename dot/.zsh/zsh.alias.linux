@@ -1,0 +1,71 @@
+if [ `which exa` ]; then
+
+  alias l="ls"
+  alias ls="exa -F"
+  alias ll="ls -l"
+  alias la="ls -a"
+  alias lt="ls --tree"
+  alias lla="ls -la"
+else
+  alias ls="ls -p --color"
+  alias l="ls"
+  alias ll="ls -l"
+  alias la="ls -A"
+  alias lla="ls -lA"
+fi
+
+function _clear_ls() {
+  clear
+  ls
+  echo
+  zle reset-prompt
+}
+
+zle -N clear_ls _clear_ls
+bindkey '^L' clear_ls
+bindkey '^R' history-with-peco
+
+alias v="nvim"
+alias sv="sudo nvim"
+
+alias pomo="ding in 30m -n -c 'ffplay -nodisp -autoexit ~/.ding_music/play.* &' &"
+
+alias less="less -R"
+
+alias h="history-with-peco"
+alias spd="spdmeter -rx wlp1s0 -tx wlp1s0"
+
+alias ether-wake-mpd="ether-wake 94:de:80:07:cc:13"
+
+# alias ssh-univ-mpd="ssh pi@192.168.52.251 -p 6022 -i ~/.ssh/university_mpd_rsa"
+alias ssh-univ-mpd="ssh pi@192.168.54.23 -p 6022 -i ~/.ssh/university_mpd_rsa"
+
+alias ssh-mpd-local="ssh kokoax@192.168.11.128 -p 6022 -i ~/.ssh/mpdServer_rsa"
+alias ssh-mpd="ssh kokoax@jyoshitune.dip.jp -p 6022 -i ~/.ssh/mpdServer_rsa"
+alias ssh-pi-local="ssh pi@192.168.11.127 -p 6021 -i ~/.ssh/MpdWoLServer_rsa"
+alias ssh-pi="ssh pi@jyoshitune.dip.jp -p 6021 -i ~/.ssh/MpdWoLServer_rsa"
+
+alias ncmpcpp-local="ncmpcpp -h localhost"
+alias ncmpcpp-mpd="ncmpcpp -h jyoshitune.dip.jp"
+alias ncmpcpp-mpd-local="ncmpcpp -h 192.168.10.128"
+
+alias killconky="killall conky"
+alias redwm="cd ~/dwm-git; updpkgsums; makepkg -fi --noconfirm; killall dwm"
+
+alias cls="clear;ls"
+alias vim="nvim"
+alias emacs="emacs -nw"
+alias check="check_mail"
+alias irb="pry"
+alias g="git"
+
+alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
+# alias repos='ghq look `ghq list | fzf --query "$1" --prompt "PROJECT "`'
+alias rewall='wallpaper_dir="$HOME/wallpaper" && feh --bg-scale $wallpaper_dir/`ls ${wallpaper_dir}  | shuf -n 1`'
+alias cat="cat-nyaa"
+
+function xxrandr() {
+  xrandr $*
+  rewall
+}
+

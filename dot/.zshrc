@@ -95,14 +95,14 @@ bashcompinit
 # [ -f ~/.bin/zen ] && ~/.bin/zen
 
 # GoEnv
-export GOENV_ROOT=$HOME/.goenv
-export GOENV_DISABLE_GOPATH=1
-export PATH=$GOENV_ROOT/bin:$PATH
-eval "$(goenv init -)"
+source /home/kokoax/.gvm/scripts/gvm
 export GOPATH=$HOME/.go
-export GOPATH=$GOPATH:$HOME/.ghq
 export PATH=$GOPATH/bin:$PATH
+export GOPATH=$GOPATH:$HOME/.ghq
 export gowork=$GOPATH/src/github.com/kokoax
+
+export NVM_DIR="$HOME/.config"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # kiex(elixirのversion manager)の設定
 export PATH=~/.kiex/bin:$PATH
