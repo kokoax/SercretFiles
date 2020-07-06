@@ -1,6 +1,6 @@
 " マウス操作の無効化
 set mouse=
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 set fileformats=unix,dos,mac
 set encoding=utf-8

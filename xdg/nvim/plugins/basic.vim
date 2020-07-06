@@ -35,12 +35,14 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
-let g:python3_host_prog = '/home/kokoax/.anyenv/envs/pyenv/shims/python'
+let g:python2_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 if has( 'mac' )
-  colorscheme hybrid
+  "colorscheme hybrid
   "colorscheme molokai
-  "colorscheme jellybeans
+  " colorscheme jellybeans
+  colorscheme gruvbox
 elseif has( 'unix' )
   "colorscheme hybrid
   "colorscheme molokai

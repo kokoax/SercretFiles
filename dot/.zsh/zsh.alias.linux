@@ -17,13 +17,12 @@ fi
 function _clear_ls() {
   clear
   ls
+  if [ `git status` && $? -eq 0 ]; then
+    git status
+  fi
   echo
   zle reset-prompt
 }
-
-zle -N clear_ls _clear_ls
-bindkey '^L' clear_ls
-bindkey '^R' history-with-peco
 
 alias v="nvim"
 alias sv="sudo nvim"

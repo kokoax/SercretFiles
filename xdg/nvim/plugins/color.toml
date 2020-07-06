@@ -5,6 +5,8 @@ repo = 'tomasr/molokai'
 repo = 'nanotech/jellybeans.vim'
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
+[[plugins]]
+repo = 'morhetz/gruvbox'
 
 # Transparent plugin
 [[plugins]]

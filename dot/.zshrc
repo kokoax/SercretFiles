@@ -1,6 +1,8 @@
+# zmodload zsh/zprof && zprof
+
 alias mm='v ~/memos/work/memo.md'
-alias mg='cd /Users/y-tokoi/repos/my_favorit_memos; ruby main.rb --title'
-alias ms='cd /Users/y-tokoi/repos/my_favorit_memos; ruby main.rb --title | peco | awk -F ":" "{print $1}" | xargs -I{} ruby main.rb --extract {}'
+alias mg='/Users/y-tokoi/repos/my_favorit_memos/my_favorit_memos --t'
+alias ms='/Users/y-tokoi/repos/my_favorit_memos/my_favorit_memos --t | peco | awk -F ":" "{print $1}" | xargs -I{} ruby main.rb -e {}'
 
 #一定時間で画面がOFFにならないようにする
 # xset s off        #BlankTimeをoff
@@ -9,14 +11,13 @@ alias ms='cd /Users/y-tokoi/repos/my_favorit_memos; ruby main.rb --title | peco 
 # コンソール透過(カーソルが触ってるwindowを透過するからよくない) # alacrittyなら本体についてる
 # transset-df 0.8 -p 1> /dev/null
 
+bindkey -e
+
 # Created by newuser for 5.0.2
 LANG=ja_JP.UTF-8
 
 # neovim のinit.vimのフォルダを探すのに利用
 export XDG_CONFIG_HOME=$HOME/.config
-
-#ターミナル入力キーバインドをvi風にする
-# bindkey -v
 
 #コマンドを10000保存する
 export HISTFILE=~/.zsh_history
@@ -95,14 +96,13 @@ bashcompinit
 # [ -f ~/.bin/zen ] && ~/.bin/zen
 
 # GoEnv
-source /home/kokoax/.gvm/scripts/gvm
-export GOPATH=$HOME/.go
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source $HOME/.gvm/scripts/gvm
 export PATH=$GOPATH/bin:$PATH
 export GOPATH=$GOPATH:$HOME/.ghq
 export gowork=$GOPATH/src/github.com/kokoax
 
-export NVM_DIR="$HOME/.config"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# export NVM_DIR="$HOME/.config"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # kiex(elixirのversion manager)の設定
 export PATH=~/.kiex/bin:$PATH
@@ -111,8 +111,11 @@ export PATH=~/.kiex/bin:$PATH
 # anyenv
 if [ -d $HOME/.anyenv ] ; then
   export PATH="$HOME/.anyenv/bin:$PATH"
-  eval "$(anyenv init -)"
+  eval "$(anyenv init - --no-rehash)"
 fi
+
+export EDITOR=nvim
+eval "$(direnv hook zsh)"
 
 # ruby settings
 export PATH=$(ruby -e 'print Gem.user_dir')/bin:$PATH
@@ -135,3 +138,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
 fi
+
+# if (which zprof > /dev/null 2>&1) ;then
+#   zprof
+# fi
+
+tmux

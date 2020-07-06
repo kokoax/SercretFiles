@@ -13,6 +13,8 @@ else
   alias lla="ls -lA"
 fi
 
+[ `which bat` ]	&& alias cat="bat"
+
 alias v="nvim"
 alias sv="sudo nvim"
 
@@ -27,6 +29,10 @@ alias vim="nvim"
 alias irb="pry"
 alias g="git"
 
-alias repos='ghq look `ghq list | peco --query \"$1\" --prompt "PROJECT"`'
+alias repos='cd $(ghq root)/$(ghq list > /dev/null | peco --query \"$1\" --prompt "PROJECT")'
 
 alias ctags='/usr/local/bin/ctags'
+
+alias weather='curl wttr.in/shibuya'
+
+alias tmux-reload='tmux source-file ~/.tmux.conf'

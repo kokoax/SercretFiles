@@ -4,83 +4,26 @@ repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
 build = 'bash install.sh'
 
-# Slime's plugin
-[[plugins]]
-repo = 'slime-lang/vim-slime-syntax.git'
-
-# Elixir's plugin
-[[plugins]]
-repo = 'elixir-lang/vim-elixir'
-
-# Clojure's plugin
-[[plugins]]
-repo = 'vim-scripts/VimClojure'
-
-# CoffeeScript's plugin
-[[plugins]]
-repo = 'kchmck/vim-coffee-script'
-
-# LaTex's plugins
-[[plugins]]
-repo = 'lervag/vimtex'
-hook_add = '''
-  let g:vimtex_latexmk_continuous = 1  " a + preview
-  let g:vimtex_latexmk_background = 1  " なにか
-  let g:vimtex_latexmk_options = '-pdfdvi'
-  let g:vimtex_view_general_viewer = 'evince'
-'''
-
-# Haskell's plugins
-# sudo stack install ghc-mod
-[[plugins]]
-repo = 'eagletmt/ghcmod-vim'
-hook_add = '''
-  autocmd BufWritePost *.hs GhcModCheckAsync " It works when saveing
-'''
-[[plugins]]
-repo = 'dag/vim2hs'
-
-# Golang's plugins
-[[plugins]]
+# Golang's plugins [[plugins]]
 repo = 'fatih/vim-go'
 hook_add = '''
   autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
   autocmd BufNewFile,BufRead *.go nnoremap <leader><leader> :GoTestFunc<CR>
 '''
 
-# Rust's plugins
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-
-# Crystal's plugins
-[[plugins]]
-repo = 'rhysd/vim-crystal'
-
-# Lisp's plugins
-[[plugins]]
-repo = 'luochen1990/rainbow'
-hook_add = '''
-  let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
-'''
-
-# Julia's plugins
-[[plugins]]
-repo = 'JuliaEditorSupport/julia-vim'
-
 # Markdown plugins
 [[plugins]]
-repo = 'plasticboy/vim-markdown'
-[[plugins]] # PrevimOpen
-repo = 'previm/previm'
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-hook_add = '''
-  autocmd BufRead,BufNewFile *.md set filetype=markdown
-'''
+repo = 'iamcco/markdown-preview.nvim'
+build = 'sh -c "cd app & yarn install"'
+on_ft = ['markdown', 'pandoc.markdown', 'rmd']
 
-# Kotlin's plugins
+# JavaScript plugins
 [[plugins]]
-repo = 'udalov/kotlin-vim'
+repo = 'pangloss/vim-javascript'
+[[plugins]]
+repo = 'othree/yajs.vim'
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
 
 # PHP's plugsin
 [[plugins]]
@@ -88,3 +31,11 @@ repo = 'roxma/LanguageServer-php-neovim'
 build = 'composer install && composer run-script parse-stubs'
 [[plugins]]
 repo = 'StanAngeloff/php.vim.git'
+
+# Processing's plugins
+[[plugins]]
+repo = 'sophacles/vim-processing'
+
+# Terraform's plugins
+[[plugins]]
+repo = 'hashivim/vim-terraform'
