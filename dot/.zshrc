@@ -144,3 +144,5 @@ fi
 # fi
 
 tmux
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

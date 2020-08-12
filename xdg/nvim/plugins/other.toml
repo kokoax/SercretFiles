@@ -2,12 +2,32 @@
 [[plugins]]
 repo = 'tpope/vim-endwise'
 
-# Vaffle File Manager for Vim
 [[plugins]]
-repo = 'cocopon/vaffle.vim'
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = '0'
 hook_add = '''
-  nnoremap <leader>n :Vaffle<CR>
+  nnoremap <leader>n :Files<CR>
 '''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+  command! -bang -nargs=* GGrep
+    \ call fzf#vim#grep(
+    \   'git grep --line-number -- '.shellescape(<q-args>), 0,
+    \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+  nnoremap <leader>n :Files<CR>
+  nnoremap <leader>m :GGrep<CR>
+'''
+
+# [[plugins]]
+# repo = 'cocopon/vaffle.vim'
+# hook_add = '''
+#   nnoremap <leader>n :Vaffle<CR>
+# '''
 # [[plugins]]
 # repo = 'scrooloose/nerdtree.git'
 # hook_add = '''
