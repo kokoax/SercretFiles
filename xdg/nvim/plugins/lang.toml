@@ -1,27 +1,27 @@
 # LanguageClient
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# rev = 'next'
+ build = 'bash install.sh'
 
 # Golang's plugins [[plugins]]
-repo = 'fatih/vim-go'
-hook_add = '''
-  autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
-  autocmd BufNewFile,BufRead *.go nnoremap <leader><leader> :GoTestFunc<CR>
-'''
+# repo = 'fatih/vim-go'
+# hook_add = '''
+#   autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
+#   autocmd BufNewFile,BufRead *.go nnoremap <leader><leader> :GoTestFunc<CR>
+# '''
 
 # Markdown plugins
-[[plugins]]
-repo = 'iamcco/markdown-preview.nvim'
-build = 'sh -c "cd app & yarn install"'
-on_ft = ['markdown', 'pandoc.markdown', 'rmd']
+# [[plugins]]
+# repo = 'iamcco/markdown-preview.nvim'
+# build = 'sh -c "cd app & yarn install"'
+# on_ft = ['markdown', 'pandoc.markdown', 'rmd']
 
-[[plugins]]
-repo = 'masukomi/vim-markdown-folding'
-hook_add = '''
-autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
-'''
+# [[plugins]]
+# repo = 'masukomi/vim-markdown-folding'
+# hook_add = '''
+# autocmd FileType markdown set foldexpr=NestedMarkdownFolds()
+# '''
 
 
 # JavaScript plugins
@@ -40,9 +40,9 @@ build = 'composer install && composer run-script parse-stubs'
 repo = 'StanAngeloff/php.vim.git'
 
 # Processing's plugins
-[[plugins]]
-repo = 'sophacles/vim-processing'
+# [[plugins]]
+# repo = 'sophacles/vim-processing'
 
 # Terraform's plugins
-[[plugins]]
-repo = 'hashivim/vim-terraform'
+# [[plugins]]
+# repo = 'hashivim/vim-terraform'

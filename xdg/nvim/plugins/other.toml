@@ -46,17 +46,17 @@ hook_add = '''
 repo = 'bronson/vim-trailing-whitespace'
 
 # Snippet Plugins
-[[plugins]]
-repo = 'SirVer/ultisnips'
-hook_add = '''
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<c-b>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-'''
+# [[plugins]]
+# repo = 'SirVer/ultisnips'
+# hook_add = '''
+#   let g:UltiSnipsExpandTrigger="<tab>"
+#   let g:UltiSnipsJumpForwardTrigger="<c-b>"
+#   let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+# '''
 
 # Snippet Templates
-[[plugins]]
-repo = 'honza/vim-snippets'
+# [[plugins]]
+# repo = 'honza/vim-snippets'
 
 # Static analyzer
 [[plugins]]
@@ -78,20 +78,20 @@ hook_add = '''
 '''
 
 # for ctags
-[[plugins]]
-repo = 'szw/vim-tags.git'
-hook_add = '''
-  let g:gen_tags#ctags_auto_gen = 1
-'''
+# [[plugins]]
+# repo = 'szw/vim-tags.git'
+# hook_add = '''
+#   let g:gen_tags#ctags_auto_gen = 1
+# '''
 
 # for git
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-hook_add = '''
-  " let g:gitgutter_highlight_lines = 1 " 変更があった一行をハイライト
-'''
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
+# [[plugins]]
+# repo = 'tpope/vim-fugitive'
+# hook_add = '''
+#   " let g:gitgutter_highlight_lines = 1 " 変更があった一行をハイライト
+# '''
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
