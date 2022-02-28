@@ -34,3 +34,13 @@ hook_add = '''
   endfunction
 '''
 
+## hightlight word by underline
+[[plugins]]
+repo = 'osyo-manga/vim-brightest'
+hook_add = '''
+  BrightestEnable
+
+  let g:brightest#highlight = {
+    \   "group" : "BrightestUnderline"
+    \}
+'''

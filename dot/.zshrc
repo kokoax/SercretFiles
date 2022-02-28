@@ -97,7 +97,7 @@ bashcompinit
 
 # GoEnv
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source $HOME/.gvm/scripts/gvm
-export PATH=$GOPATH/bin:$PATH
+export PATH=$HOME/.ghq/bin:$GOPATH/bin:$PATH
 export GOPATH=$GOPATH:$HOME/.ghq
 export gowork=$GOPATH/src/github.com/kokoax
 

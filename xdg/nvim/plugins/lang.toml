@@ -1,21 +1,34 @@
 # LanguageClient
+# [[plugins]]
+# repo = 'autozimu/LanguageClient-neovim'
+# rev = 'next'
+# build = 'bash install.sh'
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-
-# Golang's plugins [[plugins]]
-repo = 'fatih/vim-go'
+repo = 'neoclide/coc.nvim'
 hook_add = '''
-  autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
-  autocmd BufNewFile,BufRead *.go nnoremap <leader><leader> :GoTestFunc<CR>
+nmap <silent> <C-]> <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 '''
+# Golang's plugins [[plugins]]
+# [[plugins]]
+# repo = 'fatih/vim-go'
+# hook_add = '''
+#   autocmd BufNewFile,BufRead *.go nnoremap <silent> =G :GoFmt<CR>
+#   autocmd BufNewFile,BufRead *.go nnoremap <leader><leader> :GoTestFunc<CR>
+# '''
 
 # Markdown plugins
 [[plugins]]
 repo = 'iamcco/markdown-preview.nvim'
 build = 'sh -c "cd app & yarn install"'
 on_ft = ['markdown', 'pandoc.markdown', 'rmd']
+hook_add = '''
+let g:mkdp_preview_options = {
+    \ 'sync_scroll_type': 'top',
+    \ }
+'''
 
 [[plugins]]
 repo = 'masukomi/vim-markdown-folding'
@@ -46,3 +59,8 @@ repo = 'sophacles/vim-processing'
 # Terraform's plugins
 [[plugins]]
 repo = 'hashivim/vim-terraform'
+
+
+# Elixir plugins
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'

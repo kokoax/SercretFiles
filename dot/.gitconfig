@@ -28,6 +28,7 @@
   root = "!exec $SHELL ; :"
   unget = "!ghq-unget $1"
 	showpr = "!f() { git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1; }; f"
+  rebase = merge
 
 [fetch]
     prune = true

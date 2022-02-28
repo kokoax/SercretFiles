@@ -1,8 +1,10 @@
+" dein settings
+
 " setting cfn file type
 augroup cfn-template
     autocmd!
     autocmd BufRead,BufNewFile */templates/*.yml set ft=cloudformation.yaml
-augroup end" dein settings
+augroup end
 
 " dein自体の自動インストール
 let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
