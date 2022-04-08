@@ -29,6 +29,8 @@ export PATH=$HOME/.bin:$PATH # 他の方の実行ファイル
 export PATH=$HOME/.mybin:$PATH # 自分の実行ファイル
 # local binファイル をエクスポート
 export PATH=$HOME/.local/bin:$PATH # binをPATHに追加するのも忘れずに
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
 
 # キャッシュを使うことでパッケージマネージャのupdateを速くする
 zstyle ':completion:*' use-cache true
@@ -122,7 +124,6 @@ export PATH=$(ruby -e 'print Gem.user_dir')/bin:$PATH
 
 # roswell settings
 export PATH=$HOME/.roswell/bin:$PATH
-
 # rust settings
 export PATH=$HOME/.cargo/bin:$PATH
 
