@@ -38,3 +38,5 @@ alias weather='curl wttr.in/shibuya'
 alias tmux-reload='tmux source-file ~/.tmux.conf'
 
 alias diff='diff -u'
+
+alias ibrew='arch -arm64 brew'

@@ -73,4 +73,4 @@ shift + cmd - d : yabai -m window --resize right:-20:0
 
 
 alt - m : yabai -m window --toggle zoom-fullscreen
-alt - s : yabai -m window --toggle sticky
+alt - s : yabai -m window --toggle split

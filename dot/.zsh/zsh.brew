@@ -1,0 +1,6 @@
+# PHP7.4がphpenvで入らなかったのでbrewでいれてpathを通す
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+
+# psql
+export PATH="/opt/homebrew/opt/libpq/bin/:$PATH"

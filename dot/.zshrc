@@ -1,8 +1,7 @@
 # zmodload zsh/zprof && zprof
 
-alias mm='v ~/memos/work/memo.md'
-alias mg='/Users/y-tokoi/repos/my_favorit_memos/my_favorit_memos --t'
-alias ms='/Users/y-tokoi/repos/my_favorit_memos/my_favorit_memos --t | peco | awk -F ":" "{print $1}" | xargs -I{} ruby main.rb -e {}'
+alias mm='nvim ~/memos/memo.md'
+alias mfm='my_favorit_memos'
 
 #一定時間で画面がOFFにならないようにする
 # xset s off        #BlankTimeをoff
@@ -100,7 +99,8 @@ bashcompinit
 # GoEnv
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source $HOME/.gvm/scripts/gvm
 export PATH=$HOME/.ghq/bin:$GOPATH/bin:$PATH
-export GOPATH=$GOPATH:$HOME/.ghq
+export GOPATH=$HOME/.ghq
+export GOMODCACHE=$HOME/.ghq/cache
 export gowork=$GOPATH/src/github.com/kokoax
 
 # export NVM_DIR="$HOME/.config"
@@ -127,10 +127,14 @@ export PATH=$HOME/.roswell/bin:$PATH
 # rust settings
 export PATH=$HOME/.cargo/bin:$PATH
 
+# aws cliの補完を有効化
+complete -C '/usr/local/bin/aws_completer' aws
+
 # コマンドのオプション補完ファイルをfpathに追記
 [ -e ~/.zsh/lib ] && export FPATH=$FPATH:$HOME/.zsh/lib
 
 # 分割した.zshファイルを読み込み
+[ -f ~/.zsh/zsh.brew ]	  && source ~/.zsh/zsh.brew
 [ -f ~/.zsh/zsh.plugins ]	&& source ~/.zsh/zsh.plugins
 [ -f ~/.zsh/zsh.alias ]		&& source ~/.zsh/zsh.alias
 [ -f ~/.zsh/zsh.keybind ]	&& source ~/.zsh/zsh.keybind
@@ -144,6 +148,13 @@ fi
 #   zprof
 # fi
 
+IGNOREEOF=10   # Shell only exists after the 10th consecutive Ctrl-d
+set -o ignoreeof  # Same as setting IGNOREEOF=10
+export TERMINFO=/usr/share/terminfo
+
+# /Users/ca01072/.zshrc:153: can't find terminal definition for tmux-256color
+
 tmux
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

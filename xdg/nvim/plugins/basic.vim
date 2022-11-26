@@ -1,50 +1,50 @@
-" dein settings
-
 " setting cfn file type
 augroup cfn-template
     autocmd!
     autocmd BufRead,BufNewFile */templates/*.yml set ft=cloudformation.yaml
 augroup end
 
-" dein自体の自動インストール
-let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
-let s:dein_dir = s:cache_home . '/dein'
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" plug auto install
+let s:xdg_config_path = empty($XDG_CONFIG_HOME) ? expand('~/.local/share') : $XDG_CONFIG_HOME
+let s:nvim_config_path = s:xdg_config_path . '/nvim'
+let s:cache_path = s:nvim_config_path. '/.cache'
+let s:plug_path = s:cache_path . '/plug.vim'
+let s:plug_repo = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-if !isdirectory(s:dein_repo_dir)
-  call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
+if !filereadable(s:plug_path)
+  call system('sh -c "curl -fLo ' . shellescape(s:plug_path) . ' --create-dirs ' . s:plug_repo . '"')
 endif
 
-let &runtimepath = s:dein_repo_dir .",". &runtimepath
-" set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+" plug load
+exec 'source ' . s:plug_path
 
-" プラグイン読み込み＆キャッシュ作成
-" let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/*.toml'
-let s:lang_toml   = fnamemodify(expand('<sfile>'), ':h').'/lang.toml'
-let s:color_toml  = fnamemodify(expand('<sfile>'), ':h').'/color.toml'
-let s:other_toml  = fnamemodify(expand('<sfile>'), ':h').'/other.toml'
-let s:shougo_toml = fnamemodify(expand('<sfile>'), ':h').'/shougo.toml'
-
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
-
-  call dein#load_toml(s:lang_toml)
-  call dein#load_toml(s:color_toml)
-  call dein#load_toml(s:other_toml)
-  call dein#load_toml(s:shougo_toml)
-
-  call dein#end()
-  call dein#save_state()
+" setup plug cache path
+let s:plugin_cache_path = s:cache_path . '/plugged'
+if !isdirectory(s:plugin_cache_path)
+  call mkdir(s:plugin_cache_path, 'p')
 endif
 
-" 不足プラグインの自動インストール
-if has('vim_starting') && dein#check_install()
-  call dein#install()
+call plug#begin(s:plugin_cache_path)
+
+if filereadable( expand( s:nvim_config_path . '/plugins/color.vim' ) )
+  exec 'source ' . s:nvim_config_path . '/plugins/color.vim'
 endif
 
+if filereadable( expand( s:nvim_config_path . '/plugins/lang.vim' ) )
+  exec 'source ' . s:nvim_config_path . '/plugins/lang.vim'
+endif
+
+if filereadable( expand( s:nvim_config_path . '/plugins/other.vim' ) )
+  exec 'source ' . s:nvim_config_path . '/plugins/other.vim'
+endif
+
+call plug#end()
+
+" path set python binary
 let g:python2_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
+" settup color scheme
 if has( 'mac' )
   "colorscheme hybrid
   "colorscheme molokai
@@ -55,4 +55,3 @@ elseif has( 'unix' )
   "colorscheme molokai
   colorscheme jellybeans
 endif
-

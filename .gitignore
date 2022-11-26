@@ -1,4 +1,5 @@
 nvim/dein/repos/github.com/*
+xdg/nvim/.cache/plugged/*
 nvim/dein/.cache/*
 nvim/template/*
 nvim/runtime/*
