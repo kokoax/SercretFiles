@@ -22,4 +22,3 @@ set t_Co=256
 syntax on
 
 highlight Normal ctermbg=none
-
