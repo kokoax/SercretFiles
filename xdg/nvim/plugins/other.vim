@@ -1,15 +1,11 @@
 " End completion
 Plug 'tpope/vim-endwise'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-nnoremap <leader>n :Files<CR>
-command! -bang -nargs=* GGrep
-      \ call fzf#vim#grep(
-      \   'git grep --line-number -- '.shellescape(<q-args>), 0,
-      \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
 
+" Filer
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 nnoremap <leader>n :Files<CR>
-nnoremap <leader>h :History<CR>
-nnoremap <leader>m :GGrep<CR>
+nnoremap <leader>m :Rg<CR> " Need install ripgrep binary
 
 " Indent visualizer plugin
 Plug 'nathanaelkane/vim-indent-guides'

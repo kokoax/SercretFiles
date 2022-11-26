@@ -30,8 +30,8 @@ if filereadable( expand( s:nvim_config_path . '/plugins/color.vim' ) )
   exec 'source ' . s:nvim_config_path . '/plugins/color.vim'
 endif
 
-if filereadable( expand( s:nvim_config_path . '/plugins/lang.vim' ) )
-  exec 'source ' . s:nvim_config_path . '/plugins/lang.vim'
+if filereadable( expand( s:nvim_config_path . '/plugins/lsp.vim' ) )
+  exec 'source ' . s:nvim_config_path . '/plugins/lsp.vim'
 endif
 
 if filereadable( expand( s:nvim_config_path . '/plugins/other.vim' ) )
