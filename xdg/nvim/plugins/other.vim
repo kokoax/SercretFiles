@@ -21,3 +21,6 @@ nmap <Leader>r <Plug>(quickrun)
 
 " Edit config
 Plug 'editorconfig/editorconfig-vim'
+
+" Markdown folding
+Plug 'masukomi/vim-markdown-folding'
