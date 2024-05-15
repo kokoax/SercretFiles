@@ -1,0 +1,5 @@
+zle -N history-with-fzf
+
+function history-with-peco() {
+  local BUFFER=`history -n 1 | grep "$1" | fzf`
+}

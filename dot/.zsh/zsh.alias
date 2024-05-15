@@ -29,7 +29,8 @@ alias vim="nvim"
 alias irb="pry"
 alias g="git"
 
-alias repos='cd $(ghq root)/$(ghq list > /dev/null | peco --query \"$1\" --prompt "PROJECT")'
+# alias repos='cd $(ghq root)/$(ghq list > /dev/null | peco --query \"$1\" --prompt "PROJECT")'
+alias repos='cd $(ghq root)/$(ghq list > /dev/null | fzf)'
 
 alias ctags='/usr/local/bin/ctags'
 
@@ -40,3 +41,5 @@ alias tmux-reload='tmux source-file ~/.tmux.conf'
 alias diff='diff -u'
 
 alias ibrew='arch -arm64 brew'
+
+alias kill="ps | fzf | awk '{print \$1}' | xargs -I{} kill {}"

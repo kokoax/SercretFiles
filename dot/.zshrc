@@ -31,6 +31,9 @@ export PATH=$HOME/.local/bin:$PATH # binをPATHに追加するのも忘れずに
 # Homebrew
 export PATH=/opt/homebrew/bin:$PATH
 
+# iterm2を使っているとLC_*系が軒並み空になるのでとりあえずLC_CTYPEだけでも入れておく
+export LC_CTYPE=$LANG
+
 # キャッシュを使うことでパッケージマネージャのupdateを速くする
 zstyle ':completion:*' use-cache true
 
@@ -83,6 +86,9 @@ setopt SHARE_HISTORY
 autoload bashcompinit
 bashcompinit
 
+# プロンプトでもコメントアウトを有効化
+setopt interactivecomments
+
 # 補完を選択できるオプション？
 #setopt menu_complete
 
@@ -116,6 +122,11 @@ if [ -d $HOME/.anyenv ] ; then
   eval "$(anyenv init - --no-rehash)"
 fi
 
+# goenv
+if [ -d $HOME/.anyenv/envs/goenv ] ; then
+  export PATH=$HOME/.anyenv/envs/goenv/shims:$PATH
+fi
+
 export EDITOR=nvim
 eval "$(direnv hook zsh)"
 
@@ -139,6 +150,7 @@ complete -C '/usr/local/bin/aws_completer' aws
 [ -f ~/.zsh/zsh.alias ]		&& source ~/.zsh/zsh.alias
 [ -f ~/.zsh/zsh.keybind ]	&& source ~/.zsh/zsh.keybind
 [ -f ~/.zsh/zsh.color ]		&& source ~/.zsh/zsh.color
+[ -f ~/.cargo/env ]       && source "$HOME/.cargo/env"
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
@@ -154,7 +166,11 @@ export TERMINFO=/usr/share/terminfo
 
 # /Users/ca01072/.zshrc:153: can't find terminal definition for tmux-256color
 
-tmux
+tmux -u
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/ca01072/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

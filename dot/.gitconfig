@@ -2,9 +2,9 @@
 	name = kokoax
 	email = yomo4808@gmail.com
 
-[url "github:"]
-  InsteadOf = https://github.com/
-  InsteadOf = git@github.com:
+# [url "github:"]
+#   InsteadOf = https://github.com/
+#   InsteadOf = git@github.com:
 
 [alias]
   s = status
@@ -13,7 +13,6 @@
   l = log --oneline
   p = push
   d = diff
-  r = remote
   # o = checkout
   w = switch
   r = restore
@@ -21,7 +20,7 @@
   is = "!f() { gh issue status; }; f"
   rb = "!f() { git branch --merged | grep -v \"*\" | xargs git branch -d; }; f"
   g = "!f(){ nvim `git grep -n $1 | peco | awk -F ':' '{printf \"+%d %s\", $2, $1}'`;};f"
-	openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
+  openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
   ls = ls-files
   get = !ghq get -p
   list = !ghq list

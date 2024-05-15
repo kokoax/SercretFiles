@@ -1,2 +1,2 @@
 bindkey '^L' 'clear-ls'
-bindkey '^R' 'history-with-peco'
+bindkey '^R' 'history-with-fzf'

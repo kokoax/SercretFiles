@@ -24,6 +24,12 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 
+" logging
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/.cache/nvim/vim-lsp.log')
+
+let g:lsp_settings_filetype_ruby = 'solargraph'
+
 " Complement
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
