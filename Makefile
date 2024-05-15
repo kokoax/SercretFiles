@@ -1,14 +1,14 @@
-ROOT_PATH				:= $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
-ROOT_DOT				:= $(ROOT_PATH)/dot
-ROOT_XDG				:= $(ROOT_PATH)/xdg
+ROOT_PATH := $(realpath $(dir $(lastword $(MAKEFILE_LIST))))
+ROOT_DOT  := $(ROOT_PATH)/dot
+ROOT_XDG  := $(ROOT_PATH)/xdg
 XDG_CONFIG_HOME	?= $(HOME)/.config
 
 .PHONY: make_dir clean deploy
 
 deploy: make_dir clean ## Deploy dot files
 	@echo -e "\033[33mdotfiles deploying\033[0m"
-	@cd $(ROOT_DOT); ls -A | xargs -I{} ln -fnsv $(ROOT_DOT)/{}  $(HOME)/
-	@cd $(ROOT_XDG); ls    | xargs -I{} ln -fnsv $(ROOT_XDG)/{}/ $(XDG_CONFIG_HOME)/
+	@cd $(ROOT_DOT); ls -A | xargs -I{} ln -fnsv $(ROOT_DOT)/{}  $(HOME)
+	@cd $(ROOT_XDG); ls    | xargs -I{} ln -fnsv $(ROOT_XDG)/{}/ $(XDG_CONFIG_HOME)
 
 make_dir: ## Make XDG_CONFIG_HOME directory
 	@mkdir -p $(XDG_CONFIG_HOME)
