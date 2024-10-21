@@ -146,11 +146,11 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 # 分割した.zshファイルを読み込み
 [ -f ~/.zsh/zsh.brew ]	  && source ~/.zsh/zsh.brew
-[ -f ~/.zsh/zsh.plugins ]	&& source ~/.zsh/zsh.plugins
 [ -f ~/.zsh/zsh.alias ]		&& source ~/.zsh/zsh.alias
 [ -f ~/.zsh/zsh.keybind ]	&& source ~/.zsh/zsh.keybind
 [ -f ~/.zsh/zsh.color ]		&& source ~/.zsh/zsh.color
 [ -f ~/.cargo/env ]       && source "$HOME/.cargo/env"
+[ -f ~/.zsh/zsh.plugins ]	&& source ~/.zsh/zsh.plugins
 
 if [ ~/.zshrc -nt ~/.zshrc.zwc ]; then
   zcompile ~/.zshrc
@@ -166,11 +166,14 @@ export TERMINFO=/usr/share/terminfo
 
 # /Users/ca01072/.zshrc:153: can't find terminal definition for tmux-256color
 
-tmux -u
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/ca01072/.rd/bin:$PATH"
+export PATH="/Users/kokoax/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+source /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+tmux -u
+

@@ -18,7 +18,7 @@
   r = restore
   f = fetch -p
   is = "!f() { gh issue status; }; f"
-  rb = "!f() { git branch --merged | grep -v \"*\" | xargs git branch -d; }; f"
+  rb = "!f() { git branch --merged | grep -v \"*\" | grep -v master | xargs git branch -d; }; f"
   g = "!f(){ nvim `git grep -n $1 | peco | awk -F ':' '{printf \"+%d %s\", $2, $1}'`;};f"
   openpr = "!f() { hub browse -- `git log --merges --oneline --reverse --ancestry-path $1...master | grep 'Merge pull request #' | head -n 1 | cut -f5 -d' ' | sed -e 's%#%pull/%'`; }; f"
   ls = ls-files
@@ -40,4 +40,4 @@
 # 	templatedir = $HOME/.git_template/
 
 [ghq]
-   root = /Users/ca01072/.ghq/src
+   root = /Users/kokoax/.ghq/src

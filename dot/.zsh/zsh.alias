@@ -1,10 +1,10 @@
-if [ `which exa` ]; then
-  alias l="exa"
-  alias ls="exa -F"
-  alias ll="exa -l"
-  alias la="exa -a"
-  alias lt="exa --tree"
-  alias lla="exa -la"
+if [ `which eza` ]; then
+  alias l="eza"
+  alias ls="eza -F"
+  alias ll="eza -l"
+  alias la="eza -a"
+  alias lt="eza --tree"
+  alias lla="eza -la"
 else
   alias ls="ls -p --color"
   alias l="ls"

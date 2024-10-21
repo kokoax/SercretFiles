@@ -34,6 +34,10 @@ if filereadable( expand( s:nvim_config_path . '/plugins/lsp.vim' ) )
   exec 'source ' . s:nvim_config_path . '/plugins/lsp.vim'
 endif
 
+if filereadable( expand( s:nvim_config_path . '/plugins/lang.vim' ) )
+  exec 'source ' . s:nvim_config_path . '/plugins/lang.vim'
+endif
+
 if filereadable( expand( s:nvim_config_path . '/plugins/other.vim' ) )
   exec 'source ' . s:nvim_config_path . '/plugins/other.vim'
 endif
@@ -46,12 +50,13 @@ let g:python3_host_prog = '/usr/bin/python3'
 
 " settup color scheme
 if has( 'mac' )
-  "colorscheme hybrid
-  "colorscheme molokai
-  " colorscheme jellybeans
-  colorscheme gruvbox
+  " colorscheme hybrid
+  " colorscheme molokai
+  colorscheme jellybeans
+  " colorscheme gruvbox
 elseif has( 'unix' )
   "colorscheme hybrid
   "colorscheme molokai
   colorscheme jellybeans
+  " colorscheme gruvbox
 endif
