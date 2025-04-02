@@ -18,7 +18,8 @@ vscode-remove-directory/%:
 deploy-vscode:
 	make vscode-remove-directory/snippets
 	# make remove-directory/extensions
-	ls .vscode | xargs -I{} ln -fnsv .vscode/{} $(VSCODE_CONFIG)
+	ls .vscode | grep -v extensions | xargs -I{} ln -fnsv $(ROOT_PATH)/.vscode/{} $(VSCODE_CONFIG)
+	ln -fnsv $(ROOT_PATH)/.vscode/extensions.json $(HOME)/.vscode/extensions/extensions.json
 
 deploy: make_dir clean ## Deploy dot files
 	@echo -e "\033[33mdotfiles deploying\033[0m"
