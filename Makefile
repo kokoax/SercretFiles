@@ -5,8 +5,24 @@ XDG_CONFIG_HOME	?= $(HOME)/.config
 
 .PHONY: make_dir clean deploy
 
+VSCODE_CONFIG := ${HOME}/Library/Application\ Support/Code/User
+vscode-remove-directory/%:
+	# 初回にはディレクトリとしておいてあるのでunlinkだと消せなかった
+	# なので、symlinkならunlinkそうでないならrmdirする
+	if [ -L $(VSCODE_CONFIG)/$* ]; then \
+	  unlink $(VSCODE_CONFIG)/$*; \
+	else \
+	  rmdir $(VSCODE_CONFIG)/$*; \
+	fi
+
+deploy-vscode:
+	make vscode-remove-directory/snippets
+	# make remove-directory/extensions
+	ls .vscode | xargs -I{} ln -fnsv .vscode/{} $(VSCODE_CONFIG)
+
 deploy: make_dir clean ## Deploy dot files
 	@echo -e "\033[33mdotfiles deploying\033[0m"
+	make deploy-vscode
 	@cd $(ROOT_DOT); ls -A | xargs -I{} ln -fnsv $(ROOT_DOT)/{}  $(HOME)
 	@cd $(ROOT_XDG); ls    | xargs -I{} ln -fnsv $(ROOT_XDG)/{}/ $(XDG_CONFIG_HOME)
 

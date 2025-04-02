@@ -1,5 +1,5 @@
 zle -N history-with-fzf
 
 function history-with-fzf() {
-  local BUFFER=`history -n 1 | grep "$1" | fzf --no-sort --tac`
+  local BUFFER=`history -n 1 | grep "$1" | fzf --exact --no-sort --tac`
 }

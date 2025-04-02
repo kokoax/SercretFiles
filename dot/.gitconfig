@@ -35,6 +35,7 @@
 [core]
 	editor = nvim
     excludesfile = ~/.gitignore.local
+  quotepath = false
 
 # [init]
 # 	templatedir = $HOME/.git_template/

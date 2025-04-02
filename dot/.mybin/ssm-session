@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INSTANCE_NAME=$(aws ec2 describe-instances --query 'Reservations[*].Instances[*].Tags[?Key == `Name`].Value[][]' | jq -r '.[]' | fzf)
-INSTANCE_ID=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=$INSTANCE_NAME" --query 'Reservations[*].Instances[*].InstanceId[]' | jq -r '.[]')
+FILTER=$(
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].Tags[?(Key == `Name` || Key == `ResourceGroup`)][]' | jq -r '.[] | sort | [.[].Value] | @tsv' | fzf | awk '{printf "Name=tag:Name,Values=%s Name=tag:ResourceGroup,Values=%s", $1, $2}')
+INSTANCE_ID=$(aws ec2 describe-instances --filters $FILTER --query 'Reservations[*].Instances[*].InstanceId[]' | jq -r '.[]')
 
 aws ssm start-session --target $INSTANCE_ID
-

@@ -2,6 +2,7 @@
 .tags
 tags
 .vimrc.local
-tmp
+# tmp
+# !tmp/
 .idea
 memo

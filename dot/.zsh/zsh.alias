@@ -1,6 +1,6 @@
 if [ `which eza` ]; then
   alias l="eza"
-  alias ls="eza -F"
+  alias ls="eza --classify=auto"
   alias ll="eza -l"
   alias la="eza -a"
   alias lt="eza --tree"
